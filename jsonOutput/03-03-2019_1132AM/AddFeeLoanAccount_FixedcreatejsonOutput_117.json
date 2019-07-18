@@ -1,0 +1,1 @@
+{"data":null,"errorResponse":{"timestamp":"2019-03-03T06:07:26.638","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["400"],"arguments":["Fee amount can not be null for AdHoc type"],"defaultMessage":"Fee amount can not be null for AdHoc type"}],"path":"/loanaccount"}}

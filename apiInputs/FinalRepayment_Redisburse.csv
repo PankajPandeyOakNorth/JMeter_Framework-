@@ -1,0 +1,2 @@
+testScenarioNumber,testObjective,urlParameter,loanId,externalId,channel,version,notes,paymentDetail,disbursementDate,repaymentDateMethod,firstRepaymentDate,disbursementAmount,expectedResponseCode
+,,NA,209,null,null,3,null,null,2019-01-08,ANIVRSRY,null,5000000,202

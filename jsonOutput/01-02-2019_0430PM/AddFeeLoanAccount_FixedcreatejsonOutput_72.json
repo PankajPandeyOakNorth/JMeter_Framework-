@@ -1,0 +1,1 @@
+{"timestamp":1549019037493,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Product must exist 'UIPassPeriodDisb'.","path":"/portfolio/v1/loanaccount"}

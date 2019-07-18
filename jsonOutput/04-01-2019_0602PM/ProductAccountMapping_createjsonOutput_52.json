@@ -1,0 +1,1 @@
+{"timestamp":1546605268188,"status":409,"error":"Conflict","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Duplicate product short name: PAM_01","path":"/portfolio/v1/products"}

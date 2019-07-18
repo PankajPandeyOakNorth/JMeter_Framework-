@@ -1,0 +1,1 @@
+{"timestamp":1547189280610,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Account cant be created with parent ledger","path":"/accounting/v1/accounts"}

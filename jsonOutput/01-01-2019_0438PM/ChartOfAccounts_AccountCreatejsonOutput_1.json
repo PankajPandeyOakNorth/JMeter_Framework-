@@ -1,0 +1,1 @@
+{"timestamp":1546340944747,"status":409,"error":"Conflict","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Account Account1 already exists.","path":"/accounting/v1/accounts"}

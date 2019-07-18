@@ -1,0 +1,1 @@
+{"timestamp":1554279060729,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"For rejected loan comment should be mandatory","path":"/portfolio/v1/loanaccount/update/accountstatus/odin1768auris1"}

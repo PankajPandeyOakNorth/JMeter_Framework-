@@ -1,0 +1,1 @@
+{"ledger":"SubAuto1","identifier":"Account7","signatureAuthorities":["Second To Sign","First To Sign"],"balance":1000,"holders":["First Holder","Second Holder"],"name":"COUNT","type":"LIABILITY","allowManualJournalEntry":true}

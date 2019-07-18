@@ -1,0 +1,1 @@
+{"timestamp":1550423194245,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Both balloon amount and principal/installment amount could not be adjustable. At least one of them should be fixed in Period 2","path":"/portfolio/v1/loanaccount"}

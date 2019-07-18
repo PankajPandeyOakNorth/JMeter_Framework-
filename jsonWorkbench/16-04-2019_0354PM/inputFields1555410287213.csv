@@ -1,0 +1,12 @@
+loanId,externalId,channel,notes,paymentDetail,disbursementDate,repaymentDateMethod,firstRepaymentDate,disbursementAmount
+3293,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3294,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3295,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3296,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3297,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3298,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3299,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3303,null,null,null,null,2019-03-06,SPD,2019-03-07,10000000
+3304,null,null,null,null,2019-02-28,FWD,null,10000000
+3305,null,null,null,null,2019-02-07,LWD,null,10000000
+3306,null,null,null,null,2019-03-08,ANIVRSRY,null,10000000

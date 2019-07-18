@@ -1,0 +1,10 @@
+0,loanId,21,,,,,,,,,,,,,,,
+0,prepaymentType,RGSCHDL,,,,,,,,,,,,,,,
+0,paymentAllocationMethod,HORZNTL,VERTCAL,,,,,,,,,,,,,,
+1,collectionMethod,DFRMCSTM,BNKTRASF,DFRMREIN,DFRMCSCL,ADVCOLL,,,,,,,,,,,
+2,DaysCollection,A/A,A/360,30/360,,,,,,,,,,,,,
+3,Calculationmethod,EMI,EMI,EPI,EPI,EAP,EAP,IPP,IPP,INO,IGP,Rollup,,,,,
+3,LockInstallmentlockPrincipal,Yes,NO,Yes,NO,Yes,NO,Yes,No,Ballon,Ballon,Ballon,,,,,
+4,repaymentDate,Before 1st due,on 1st due,one day after 2nd due,one day before 3rd due,exact on 3rd due,complete payment on last due,complete payment after last due,Multiple Prepayment on same due,Prepayment on MP1,Prepayment between MP1 and MP2,Prepayment on MP2,Prepayment on MP1,Prepayment on Mp2,Prepayment on MP3,Prepay between Mp1 and MP2,Prepay Between  MP2 and Mp3
+4,period,Single,Single,Single,Single,Single,Single,Single,single,MultiPeriod,MultiPeriod,MultiPeriod,MultiPeriod,MultiPeriod,MultiPeriod,MultiPeriod,MultiPeriod
+5,customerRepayAmount,prepayment with existing dues,Single installment with prepayment amount,prepayment with existing and dues OD for previous and excuding unpaid   OD,,,,,,,,,,,,,

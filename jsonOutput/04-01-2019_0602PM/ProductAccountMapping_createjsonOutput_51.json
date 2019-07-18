@@ -1,0 +1,1 @@
+{"timestamp":1546605267077,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Invalid Account mapped for Write-off Expense Account, Account type should be EXPENSE","path":"/portfolio/v1/products"}

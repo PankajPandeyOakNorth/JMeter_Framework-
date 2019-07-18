@@ -1,0 +1,1 @@
+{"timestamp":1548334156751,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Fee amount can not be null for Fixed type calculation method","path":"/portfolio/v1/loanaccount"}

@@ -1,0 +1,1 @@
+{"timestamp":1549457625758,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"From amount can not be null and from date should be null","path":"/portfolio/v1/loanaccount"}

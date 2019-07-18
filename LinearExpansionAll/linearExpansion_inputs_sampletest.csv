@@ -1,0 +1,5 @@
+0,FeeApplication Type,Periodic,,Event,AdHoc,
+1,paymentDateMethod,IPD,IPD,IPD,IPD,SPD
+1,DemandDate,CurrentDate,CurrentDate,FutureDate,ValueDate,
+1,DemandGenerated,Yes,No,No,yes,No
+2,Captilazid,TRUE,FALSE,,,

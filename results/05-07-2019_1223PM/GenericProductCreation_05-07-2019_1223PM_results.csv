@@ -1,0 +1,2 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+05-07-2019,1224PM,GenericProductCreation,1,C:\ACorn\jsonPayload\05-07-2019_1223PM\testScenario_for_API__GenericProductCreation1.json,C:\ACorn\jsonOutput\05-07-2019_1223PM\GenericProductCreationjsonOutput_1.json,FAIL,Actual response code received is 202

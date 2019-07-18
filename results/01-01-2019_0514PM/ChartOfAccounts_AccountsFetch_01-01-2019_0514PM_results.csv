@@ -1,0 +1,2 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+01-01-2019,0514PM,ChartOfAccounts_AccountsFetch,1,,C:\ACorn\jsonOutput\01-01-2019_0514PM\ChartOfAccounts_AccountsFetchjsonOutput_1.json,FAIL,|Expected value for allowManualJournalEntry is true and actual value is null

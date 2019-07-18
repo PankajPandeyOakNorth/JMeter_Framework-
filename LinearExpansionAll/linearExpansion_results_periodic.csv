@@ -1,0 +1,7 @@
+feeName,feeApplicationType,feeId,nextDueDate,feeCalculationMethod,feeFormula,feePercentage,feeAmount,referenceAmount,periodValue,periodFrequency,paymentDateMethod,paymentDate,capitalizeToPrincipal
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,%,5,null,LoanAmount,1,MONTHS,IPD,null,TRUE
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,3,MONTHS,IPD,null,TRUE
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,YEARS,IPD,null,TRUE
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,SPD,2019-03-22,TRUE
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,FALSE

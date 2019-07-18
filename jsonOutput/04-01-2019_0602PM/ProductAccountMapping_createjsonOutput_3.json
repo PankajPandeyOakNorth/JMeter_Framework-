@@ -1,0 +1,1 @@
+{"timestamp":1546605188973,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Invalid Account mapped for Portfolio Control Account, Account type should be ASSET","path":"/portfolio/v1/products"}

@@ -1,0 +1,9 @@
+testScenarioNumber,testObjective,urlParameter,expectedResponseCode,type,identifier,name,allowManualJournalEntry,holders.0,holders.1,signatureAuthorities.0,signatureAuthorities.1,balance,ledger,state,alternativeAccountNumber
+,,Account1,200,LIABILITY,Account1,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1,OPEN,null
+,,Account2,200,EQUITY,Account2,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2,OPEN,null
+,,Account3,200,REVENUE,Account3,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3,OPEN,null
+,,Account4,200,EXPENSE,Account4,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto4,OPEN,null
+,,Account5,200,ASSET,Account5,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto5,OPEN,null
+,,Account6,200,LIABILITY,Account6,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1,OPEN,null
+,,Account8,200,EQUITY,Account8,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2,OPEN,null
+,,Account9,200,REVENUE,Account9,COUNT,NULL,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3,OPEN,null

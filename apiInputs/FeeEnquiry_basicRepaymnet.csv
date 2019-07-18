@@ -1,0 +1,5 @@
+testScenarioNumber,testObjective,urlParameter,collectionMethod,repaymentDate,repaymentCurrency,cashCollateralUtilizationAmount,retainedInterestUtilizationAmount,customerRepayAmount,version,loanId,expectedResponseCode
+,,NA,DFRMCSTM,2019-03-07,INR,null,null,888487.88,2,4310,202
+,,NA,DFRMCSTM,2019-03-07,INR,null,null,888487.88,2,4312,202
+,,NA,DFRMCSTM,2019-03-15,INR,null,null,1602.1,2,4310,202
+,,NA,DFRMCSTM,2019-03-15,INR,null,null,200.26,2,4312,202

@@ -1,0 +1,6 @@
+identifier,type,name,showAccountsInChart,description,currency
+RepaySubledger,ASSET,RepaySubledger,TRUE,Testing,INR
+RepayEquSubledger,EQUITY,RepayEquSubledger,TRUE,Testing,INR
+RepayExpSubledger,EXPENSE,RepayExpSubledger,TRUE,Testing,INR
+RepayLibSubledger,LIABILITY,RepayLibSubledger,TRUE,Testing,INR
+RepayRevSubledger,REVENUE,RepayRevSubledger,TRUE,Testing,INR

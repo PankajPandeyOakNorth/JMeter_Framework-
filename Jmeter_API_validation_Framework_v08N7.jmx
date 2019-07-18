@@ -1,0 +1,2299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="API Validation Framework" enabled="true">
+      <stringProp name="TestPlan.comments">1. Create your project folder
+2. Create two folders at the same level under your project folder. Names must be &quot;apisToBeValidatedPath&quot; and &quot;apiInputsPath&quot;
+3. All your test scenarios should be created as a CSV file, and expected response should also be in the same file. One line of the CSV should contain
+all the inputs fields for the JSON and the expected values in the results json. Both of these should be separated by a field called &quot;expectedResponseCode&quot;.
+4. In the &quot;User Defined Variables - Main&quot;, enter the right value for &quot;projectFolderPath&quot; and &quot;pathSeparator&quot; (based on your underlying OS).
+5. Copy the &quot;CSVTOJSON&quot; conversion utility to the load injection machine and specify its appropriate path under 
+&quot;User Defined Variables - Main&quot;-&gt;&quot;csvJSONConversionUtility&quot; variable.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <com.tag.jmeter.ext.config.PropertyReader guiclass="TestBeanGUI" testclass="com.tag.jmeter.ext.config.PropertyReader" testname="Property File Reader" enabled="true">
+        <stringProp name="propFilePath">jmeterAPIValidation.properties</stringProp>
+      </com.tag.jmeter.ext.config.PropertyReader>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - Derived" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="apisToBeValidatedPath" elementType="Argument">
+            <stringProp name="Argument.name">apisToBeValidatedPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}apisToBeValidated${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="apiInputsPath" elementType="Argument">
+            <stringProp name="Argument.name">apiInputsPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}apiInputs${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jsonWorkbenchPath" elementType="Argument">
+            <stringProp name="Argument.name">jsonWorkbenchPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}jsonWorkbench${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jsonWorkbenchResultsValidationPath" elementType="Argument">
+            <stringProp name="Argument.name">jsonWorkbenchResultsValidationPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}jsonWorkbench${__P(pathSeparator)}expectedResults${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jsonPayloadPath" elementType="Argument">
+            <stringProp name="Argument.name">jsonPayloadPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}jsonPayload${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jsonOutputPath" elementType="Argument">
+            <stringProp name="Argument.name">jsonOutputPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}jsonOutput${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="resultsPath" elementType="Argument">
+            <stringProp name="Argument.name">resultsPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}results${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pathSeparator" elementType="Argument">
+            <stringProp name="Argument.name">pathSeparator</stringProp>
+            <stringProp name="Argument.value">${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="apiHeaders" elementType="Argument">
+            <stringProp name="Argument.name">apiHeaders</stringProp>
+            <stringProp name="Argument.value">${__P(apiHeaders)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="overallDebug" elementType="Argument">
+            <stringProp name="Argument.name">overallDebug</stringProp>
+            <stringProp name="Argument.value">${__P(debug)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="errorsPath" elementType="Argument">
+            <stringProp name="Argument.name">errorsPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}errors${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jsonWorkbenchURLParametersPath" elementType="Argument">
+            <stringProp name="Argument.name">jsonWorkbenchURLParametersPath</stringProp>
+            <stringProp name="Argument.value">${__P(projectFolderPath)}${__P(pathSeparator)}jsonWorkbench${__P(pathSeparator)}urlParameters${__P(pathSeparator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="urlInputField" elementType="Argument">
+            <stringProp name="Argument.name">urlInputField</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="apiHeadersGETPUT" elementType="Argument">
+            <stringProp name="Argument.name">apiHeadersGETPUT</stringProp>
+            <stringProp name="Argument.value">${__P(apiHeadersGETPUT)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="apiTestResult" elementType="Argument">
+            <stringProp name="Argument.name">apiTestResult</stringProp>
+            <stringProp name="Argument.value">pass</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+        <stringProp name="WebDriverConfig.proxy_type">DIRECT</stringProp>
+        <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+        <stringProp name="WebDriverConfig.http_host"></stringProp>
+        <intProp name="WebDriverConfig.http_port">8080</intProp>
+        <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+        <stringProp name="WebDriverConfig.https_host"></stringProp>
+        <intProp name="WebDriverConfig.https_port">8080</intProp>
+        <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+        <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+        <stringProp name="WebDriverConfig.socks_host"></stringProp>
+        <intProp name="WebDriverConfig.socks_port">8080</intProp>
+        <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+        <boolProp name="WebDriverConfig.maximize_browser">false</boolProp>
+        <boolProp name="WebDriverConfig.reset_per_iteration">true</boolProp>
+        <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+        <stringProp name="ChromeDriverConfig.chromedriver_path">${__P(chromeDriverPath)}</stringProp>
+        <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+        <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+      </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+      <hashTree/>
+      <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+        <boolProp name="displayJMeterProperties">false</boolProp>
+        <boolProp name="displayJMeterVariables">true</boolProp>
+        <boolProp name="displaySamplerProperties">true</boolProp>
+        <boolProp name="displaySystemProperties">false</boolProp>
+      </DebugPostProcessor>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="API Validation Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Set-up results file and directories before starting the test" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Create a timestamped folder name" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//Create a timestamped folder
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import org.apache.jmeter.util.JMeterUtils;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Create a timestamped folder name - Beanshell starts&quot;);
+	SimpleDateFormat dateFormatter = new SimpleDateFormat(&quot;dd-MM-yyyy&quot;);
+	SimpleDateFormat timeFormatter = new SimpleDateFormat(&quot;hhmma&quot;);
+	Calendar cal = Calendar.getInstance();
+	String testStartDate = dateFormatter.format(cal.getTime());
+	String testStartTime = timeFormatter.format(cal.getTime());
+	vars.put(&quot;timeStampedFolderName&quot;,testStartDate.concat(&quot;_&quot;).concat(testStartTime));
+	if (System.getProperty(&quot;os.name&quot;).startsWith(&quot;Windows&quot;)) {
+	   // includes: Windows 2000,  Windows 95, Windows 98, Windows NT, Windows Vista, Windows XP
+	   vars.put(&quot;operatingSystem&quot;,&quot;Windows&quot;);
+	} else {
+	   // everything else
+	   vars.put(&quot;operatingSystem&quot;,&quot;Unix&quot;);
+	}
+	if (debug) log.info(&quot;Create a timestamped folder name - Beanshell ends&quot;);
+} catch (Exception e) {
+	System.out.println(&quot;Something terribly wrong with this test set-up? &quot;+ e.toString());
+}
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Create all project directories as required" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//Create all project directories
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Create all project directories as required - beanshell starts&quot;);
+	
+	File errorsDirectory = new File(vars.get(&quot;errorsPath&quot;));
+	if(!errorsDirectory.exists()){
+	     errorsDirectory.mkdir();
+	}
+	
+	String timeStampedErrorsPath = vars.get(&quot;errorsPath&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(vars.get(&quot;pathSeparator&quot;));
+	File timeStampedErrorsDirectory = new File(timeStampedErrorsPath);
+	if(!timeStampedErrorsDirectory.exists()){
+	     timeStampedErrorsDirectory.mkdir();
+	}
+	vars.put(&quot;timeStampedErorsPath&quot;,timeStampedErrorsPath);
+	if (debug) log.info(&quot;Create all project directories as required - beanshell ends&quot;);
+	String errorsFileName = timeStampedErrorsPath.concat(&quot;errors_&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;).concat(&quot;.txt&quot;));
+	vars.put(&quot;errorsFileName&quot;,errorsFileName);
+	f = new FileOutputStream(errorsFileName, true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error File Created&quot;);
+	f.close();
+	File jsonWorkbenchDirectory = new File(vars.get(&quot;jsonWorkbenchPath&quot;));
+	if(!jsonWorkbenchDirectory.exists()){
+	     jsonWorkbenchDirectory.mkdir();
+	}
+	String timeStampedJSONWorkbenchPath = vars.get(&quot;jsonWorkbenchPath&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(vars.get(&quot;pathSeparator&quot;));
+	File timeStampedJSONWorkbenchDirectory = new File(timeStampedJSONWorkbenchPath);
+	if(!timeStampedJSONWorkbenchDirectory.exists()){
+	     timeStampedJSONWorkbenchDirectory.mkdir();
+	}
+	vars.put(&quot;timeStampedJSONWorkbenchPath&quot;,timeStampedJSONWorkbenchPath);
+	File jsonWorkbenchResultsValidationDirectory = new File(vars.get(&quot;jsonWorkbenchResultsValidationPath&quot;));
+	if(!jsonWorkbenchResultsValidationDirectory.exists()){
+	     jsonWorkbenchResultsValidationDirectory.mkdir();
+	}
+	String timeStampedJSONWorkbenchResultsValidationPath = vars.get(&quot;jsonWorkbenchResultsValidationPath&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(vars.get(&quot;pathSeparator&quot;));
+	File timeStampedJsonWorkbenchResultsValidationDirectory = new File(timeStampedJSONWorkbenchResultsValidationPath);
+	if(!timeStampedJsonWorkbenchResultsValidationDirectory.exists()){
+	     timeStampedJsonWorkbenchResultsValidationDirectory.mkdir();
+	}
+	vars.put(&quot;timeStampedJSONWorkbenchResultsValidationPath&quot;,timeStampedJSONWorkbenchResultsValidationPath);
+	
+	File jsonPayloadDirectory = new File(vars.get(&quot;jsonPayloadPath&quot;));
+	if(!jsonPayloadDirectory.exists()){
+	     jsonPayloadDirectory.mkdir();
+	}
+	
+	String timeStampedJsonPayloadPath = vars.get(&quot;jsonPayloadPath&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(vars.get(&quot;pathSeparator&quot;));
+	File timeStampedJsonPayloadDirectory = new File(timeStampedJsonPayloadPath);
+	if(!timeStampedJsonPayloadDirectory.exists()){
+	     timeStampedJsonPayloadDirectory.mkdir();
+	}
+	vars.put(&quot;timeStampedJsonPayloadPath&quot;,timeStampedJsonPayloadPath);
+	
+	File resultsDirectory = new File(vars.get(&quot;resultsPath&quot;));
+	if(!resultsDirectory.exists()){
+	     resultsDirectory.mkdir();
+	}
+	
+	String timeStampledResultsPath = vars.get(&quot;resultsPath&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(vars.get(&quot;pathSeparator&quot;));
+	File timeStampledResultsDirectory = new File(timeStampledResultsPath);
+	if(!timeStampledResultsDirectory.exists()){
+	     timeStampledResultsDirectory.mkdir();
+	}
+	vars.put(&quot;timeStampledResultsPath&quot;,timeStampledResultsPath);
+	
+	File jsonOutputDirectory = new File(vars.get(&quot;jsonOutputPath&quot;));
+	if(!jsonOutputDirectory.exists()){
+	     jsonOutputDirectory.mkdir();
+	}
+	
+	String timeStampedJsonOutputPath = vars.get(&quot;jsonOutputPath&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(vars.get(&quot;pathSeparator&quot;));
+	File timeStampedJsonOutputDirectory = new File(timeStampedJsonOutputPath);
+	if(!timeStampedJsonOutputDirectory.exists()){
+	     timeStampedJsonOutputDirectory.mkdir();
+	}
+	vars.put(&quot;timeStampedJsonOutputPath&quot;,timeStampedJsonOutputPath);
+	
+	//jsonWorkbenchURLParametersPath
+	File jsonWorkbenchURLParametersDirectory = new File(vars.get(&quot;jsonWorkbenchURLParametersPath&quot;));
+	if(!jsonWorkbenchURLParametersDirectory.exists()){
+	     jsonWorkbenchURLParametersDirectory.mkdir();
+	}
+
+	String timeStampedJsonWorkbenchURLParametersPath = vars.get(&quot;jsonWorkbenchURLParametersPath&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(vars.get(&quot;pathSeparator&quot;));
+	File timeStampedjJsonWorkbenchURLParametersDirectory = new File(timeStampedJsonWorkbenchURLParametersPath);
+	if(!timeStampedjJsonWorkbenchURLParametersDirectory.exists()){
+	     timeStampedjJsonWorkbenchURLParametersDirectory.mkdir();
+	}
+	vars.put(&quot;timeStampedJsonWorkbenchURLParametersPath&quot;,timeStampedJsonWorkbenchURLParametersPath);
+	
+
+	
+} catch (Exception e) {
+	String errorCode = &quot;1100&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+} </stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Create a file to Store the overall results" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//Create a file to Store the API validation results
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Create a file to Store the Overall API validation results - beanshell starts&quot;);
+	
+	String apiResultsFileName = vars.get(&quot;timeStampledResultsPath&quot;).concat(&quot;overall_results.csv&quot;);
+	f = new FileOutputStream(apiResultsFileName,false);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Test Execution Date,Execution Time,API Name,API Payload Input file,Test Result&quot;);
+	f.close();
+	vars.put(&quot;overallResultsFileName&quot;,apiResultsFileName);
+	
+	if (debug) log.info(&quot;Create a file to Store the Overall API validation results - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;1401&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While there are APIs to be validated" enabled="true">
+          <stringProp name="TestPlan.comments">		</stringProp>
+          <stringProp name="WhileController.condition">true</stringProp>
+        </WhileController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">${apisToBeValidatedPath}APIsToBeValidated.csv</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">slNo,apiName,apiMethod,apiPath,apiInputsFile,toBeValidated</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Should this API Be Validated?" enabled="true">
+            <stringProp name="IfController.condition">&quot;${toBeValidated}&quot;==&quot;y&quot;</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Calculate number of fields in CSV for input and expected results" enabled="true">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="REVISE - Calculate number of fields in CSV for input and expected results" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Calculate the number of fields in CSV for input
+//try {
+	Boolean debug;
+
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Calculate number of fields in CSV for input and expected results - beanshell starts&quot;);
+	String strCurrentLine;
+	String overallInputFile = vars.get(&quot;apiInputsPath&quot;).concat(vars.get(&quot;apiInputsFile&quot;));
+	if (debug) log.info(&quot;Overall Input File: &quot;+overallInputFile);
+	vars.put(&quot;overallInputFile&quot;,overallInputFile);
+	BufferedReader br = new BufferedReader(new FileReader(overallInputFile));     
+	StringBuilder sbInputScenarios;
+	StringBuilder sbExpectedResults;
+	String[] splitLine;
+	if ((strCurrentLine = br.readLine()) != null) {
+		splitLine = strCurrentLine.split(&quot;,&quot;);
+	}
+	//log.info(&quot;Split line length: &quot;+String.valueOf(splitLine.length));
+	//start Field for input Payload
+	//end Field for input JSON
+	//startField for expected results JSON
+	//end field for expected results JSON
+	int startFieldForExpectedResults = 0;
+	int urlInputField = Integer.parseInt(vars.get(&quot;urlInputField&quot;));
+	Boolean expectedResponseCodeFound= false;
+	String inputPayloadExistence = &quot;yes&quot;;
+	for (int i=0;i&lt;splitLine.length;i++) {
+		log.info(String.valueOf(i)+&quot;:&quot;+splitLine[i]);
+		if (splitLine[i].equals(&quot;expectedResponseCode&quot;)) {
+			break;
+		} else {
+			startFieldForExpectedResults++;
+		}
+	}
+	
+	if (debug) log.info(&quot;URLInput Starting and ending field: &quot;+vars.get(&quot;urlInputField&quot;));
+	if (debug) log.info(&quot;Expected Results Starting Field: &quot;+String.valueOf(startFieldForExpectedResults));
+	if ((startFieldForExpectedResults-urlInputField)==1) inputPayloadExistence = &quot;no&quot;;
+	vars.put(&quot;startFieldForExpectedResults&quot;,String.valueOf(startFieldForExpectedResults));
+	vars.put(&quot;totalNumberOfFields&quot;,String.valueOf(splitLine.length));
+	vars.put(&quot;inputPayloadExistence&quot;,inputPayloadExistence);
+	long millis = System.currentTimeMillis();
+	vars.put(&quot;millis&quot;,String.valueOf(millis));
+
+	
+	/*
+	int numberOfFields =0;
+	int urlInputField = Integer.parseInt(vars.get(&quot;urlInputField&quot;));
+
+	for (int i=0;i&lt;splitLine.length;i++) {
+		log.info(splitLine[i]);
+	}
+	vars.put(&quot;inputFileStartingField&quot;,String.valueOf(urlInputField+1));
+	for (int i=(urlInputField+1);i&lt;splitLine.length;i++) {
+		if (splitLine[i].equals(&quot;expectedResponseCode&quot;)) {
+			break;
+			log.info(&quot;found expResCod&quot;);
+		} else {
+			numberOfFields++;
+			log.info(&quot;incrementing no of fields&quot;);
+		}
+	}
+	if (debug) log.info(&quot;Number of Fields: &quot;+String.valueOf(numberOfFields+urlInputField+1));
+	vars.put(&quot;numberOfFields&quot;,String.valueOf(numberOfFields+urlInputField+1));
+	vars.put(&quot;startCountForExpectedResults&quot;,String.valueOf(numberOfFields+urlInputField+2));
+	vars.put(&quot;endCountForExpectedResults&quot;,String.valueOf(splitLine.length));
+	//Current time in millis
+	long millis = System.currentTimeMillis();
+	vars.put(&quot;millis&quot;,String.valueOf(millis));
+	if (debug) log.info(&quot;Calculate number of fields in CSV for input and expected results - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;1200&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+	
+}*/</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Split files and create exclusive files for URL Parameters, input fields &amp; expected results" enabled="true">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="REVISE - Split input file and store file names" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Store input fields and expected results file names with full path
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Split input file and store file names - beanshell starts&quot;);
+	String inputFile = vars.get(&quot;timeStampedJSONWorkbenchPath&quot;).concat(&quot;inputFields&quot;).concat(vars.get(&quot;millis&quot;)).concat(&quot;.csv&quot;);
+	if (debug) log.info(&quot;input file: &quot;+inputFile);
+	String expectedResultsFile = vars.get(&quot;timeStampedJSONWorkbenchPath&quot;).concat(&quot;expectedResults&quot;).concat(vars.get(&quot;millis&quot;)).concat(&quot;.csv&quot;);
+	String urlInputFieldFile = vars.get(&quot;timeStampedJSONWorkbenchPath&quot;).concat(&quot;urlInputField&quot;).concat(vars.get(&quot;millis&quot;)).concat(&quot;.csv&quot;);
+	if (debug) log.info(&quot;Expected results file: &quot;+expectedResultsFile);
+	vars.put(&quot;inputFile&quot;,inputFile);
+	vars.put(&quot;expectedResultsFile&quot;,expectedResultsFile);
+	vars.put(&quot;urlInputFieldFile&quot;,urlInputFieldFile);
+//vars.put(&quot;startFieldForExpectedResults&quot;,String.valueOf(startFieldForExpectedResults));
+//	vars.put(&quot;totalNumberOfFields&quot;,String.valueOf(splitLine.length));
+//	vars.put(&quot;inputPayloadExistence&quot;,inputPayloadExistence);
+	int urlInputField = Integer.parseInt(vars.get(&quot;urlInputField&quot;));
+	int totalNumberOfFields = Integer.parseInt(vars.get(&quot;totalNumberOfFields&quot;));
+	log.info(&quot;totalNumberOfFields&quot;+vars.get(&quot;totalNumberOfFields&quot;));
+	String inputPayloadExistence = vars.get(&quot;inputPayloadExistence&quot;);
+	int startFieldForExpectedResults = Integer.parseInt(vars.get(&quot;startFieldForExpectedResults&quot;));
+	
+	String strCurrentLine;
+	String overallInputFile = vars.get(&quot;apiInputsPath&quot;).concat(vars.get(&quot;apiInputsFile&quot;));
+	if (debug) log.info(&quot;Overall Inputs File: &quot;+overallInputFile);
+	
+	//Perform Split - create URLInputField File
+	BufferedReader br = new BufferedReader(new FileReader(overallInputFile));     
+	String line;
+	String[] inputSplitLine;
+	f = new FileOutputStream(urlInputFieldFile, false);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	String csvLine=&quot;&quot;;
+	while ((line=br.readLine())!=null) {
+		inputSplitLine = line.split(&quot;,&quot;);
+		csvLine = inputSplitLine[urlInputField];
+		print(csvLine);
+	}
+	f.close();
+	br.close();
+log.info(&quot;13001&quot;);
+
+	//Perform Split - Create input File
+	
+	if (inputPayloadExistence.equals(&quot;yes&quot;)) {
+		BufferedReader br = new BufferedReader(new FileReader(overallInputFile));     
+		String line;
+		String[] inputSplitLine;
+		f = new FileOutputStream(inputFile, false);
+		p = new PrintStream(f); 
+		this.interpreter.setOut(p); 
+		while ((line=br.readLine())!=null) {
+			inputSplitLine = line.split(&quot;,&quot;);
+			String csvLine=&quot;&quot;;
+			for (int i=(urlInputField+1);i&lt;=(startFieldForExpectedResults-1);i++) {
+				if (i==(startFieldForExpectedResults-1)) {
+					csvLine = csvLine.concat(inputSplitLine[i]);
+				} else {
+					csvLine = csvLine.concat(inputSplitLine[i]).concat(&quot;,&quot;);
+				}
+			}
+			print(csvLine);
+		}
+	}
+	f.close();
+	br.close();
+	log.info(&quot;13002&quot;);
+
+	//Perform Split - Create expected results File
+	BufferedReader br = new BufferedReader(new FileReader(overallInputFile));     
+	String line;
+	String[] expectedResultSplitLine;
+	f = new FileOutputStream(expectedResultsFile, false);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	while ((line=br.readLine())!=null) {
+		expectedResultSplitLine = line.split(&quot;,&quot;);
+		String csvLine=&quot;&quot;;
+		for (int i=startFieldForExpectedResults;i &lt; totalNumberOfFields;i++) {
+			if (i==(expectedResultSplitLine.length-1)) {
+				csvLine = csvLine.concat(expectedResultSplitLine[i]);
+			} else {
+				csvLine = csvLine.concat(expectedResultSplitLine[i]).concat(&quot;,&quot;);
+			}
+		}
+		if (csvLine.length()&gt;0) {
+			print(csvLine);
+		}
+	}
+	f.close();
+	br.close();
+log.info(&quot;13003&quot;);
+	
+	//Find the number of columns
+	/*BufferedReader br = new BufferedReader(new FileReader(overallInputFile));     
+	StringBuilder sbInputScenarios;
+	StringBuilder sbExpectedResults;
+	String[] splitLine;
+	if ((strCurrentLine = br.readLine()) != null) {
+		splitLine = strCurrentLine.split(&quot;,&quot;);
+	}
+
+	int inputFileStartingField = Integer.parseInt(vars.get(&quot;inputFileStartingField&quot;))-1;
+	for (int i=inputFileStartingField;i&lt;splitLine.length;i++) {
+		if (splitLine[i].equals(&quot;expectedResponseCode&quot;)) {
+			break;
+		} else {
+			numberOfFields++;
+		}
+	}
+	br.close();
+	numberOfFields = inputFileStartingField+numberOfFields;
+	*/
+	
+	
+	if (debug) log.info(&quot;Split input file and store file names - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;1300&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Create a file to Store the API validation results" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Create a file to Store the API validation results
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Create a file to Store the API validation results - beanshell starts&quot;);
+	
+	String apiResultsFileName = vars.get(&quot;timeStampledResultsPath&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;_&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(&quot;_results.csv&quot;);
+	f = new FileOutputStream(apiResultsFileName,false);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure&quot;);
+	f.close();
+	vars.put(&quot;apiResultsFileName&quot;,apiResultsFileName);
+	
+	if (debug) log.info(&quot;Create a file to Store the API validation results - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;1400&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Condition the input and expected results file before converting CSV to JSON" enabled="true">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Condition the input and expected results file before converting CSV to JSON" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//condition the input file
+
+import java.io.File;
+import java.io.IOException;
+import java.lang.*;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Condition the input and expected results file before converting CSV to JSON - beanshell starts&quot;);
+	String existingInputFileName = vars.get(&quot;inputFile&quot;);
+	String existingExpectedResultsFileName = vars.get(&quot;expectedResultsFile&quot;);
+	String newInputFileName = vars.get(&quot;timeStampedJSONWorkbenchPath&quot;).concat(&quot;tempInput.csv&quot;);
+	String newExpectedResultsFileName = vars.get(&quot;timeStampedJSONWorkbenchPath&quot;).concat(&quot;tempExpectedResults.csv&quot;);
+	if (vars.get(&quot;inputPayloadExistence&quot;).equals(&quot;yes&quot;)) {
+		f1 = new FileOutputStream(newInputFileName, false);
+		p1 = new PrintStream(f1); 
+		this.interpreter.setOut(p1); 
+		String line;
+		Boolean lineChanged =false;
+		BufferedReader brTest = new BufferedReader(new FileReader(existingInputFileName));
+		while ((line = brTest.readLine()) != null) {
+			if (!lineChanged) {
+				print(line.replace(&quot;.&quot;, &quot;/&quot;));
+				lineChanged = true;
+			} else {
+				print(line);
+			}
+		}
+		brTest.close();
+		f1.close();
+	}
+	f1 = new FileOutputStream(newExpectedResultsFileName, false);
+	p1 = new PrintStream(f1); 
+	this.interpreter.setOut(p1); 
+	String line;
+	Boolean lineChanged =false;
+	BufferedReader brTest = new BufferedReader(new FileReader(existingExpectedResultsFileName));
+	while ((line = brTest.readLine()) != null) {
+		if (!lineChanged) {
+			print(line.replace(&quot;.&quot;, &quot;/&quot;));
+			lineChanged = true;
+		} else {
+			print(line);
+		}
+	}
+	brTest.close();
+	f1.close();
+	if (vars.get(&quot;inputPayloadExistence&quot;).equals(&quot;yes&quot;)) new File(existingInputFileName).delete();
+	new File(existingExpectedResultsFileName).delete();
+	if (vars.get(&quot;inputPayloadExistence&quot;).equals(&quot;yes&quot;)) new File(newInputFileName).renameTo(new File(existingInputFileName));
+	new File(newExpectedResultsFileName).renameTo(new File(existingExpectedResultsFileName));
+	if (debug) log.info(&quot;Condition the input and expected results file before converting CSV to JSON - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;1700&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+            </hashTree>
+            <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Convert CSV to JSON - URL Parameters" enabled="true">
+              <stringProp name="WebDriverSampler.script">try {
+	var pkg = JavaImporter(org.openqa.selenium)
+	var support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+	var wait = new support_ui.WebDriverWait(WDS.browser, 10000)
+	WDS.sampleResult.sampleStart()
+	WDS.sampleResult.getLatency()
+	WDS.browser.get(WDS.props.get(&quot;csvJSONConversionUtility&quot;))
+	var fileUploadTab = WDS.browser.findElement(pkg.By.linkText(&quot;Choose File&quot;))	
+	var fileUploadButton = WDS.browser.findElement(pkg.By.id(&apos;f1&apos;))
+	fileUploadTab.click()
+	fileUploadButton.click()
+	WDS.browser.findElement(pkg.By.id(&apos;chkSkipEmpty&apos;)).click()
+	//document.getElementById(&quot;myCheck&quot;).checked
+	fileUploadButton.sendKeys(WDS.vars.get(&quot;urlInputFieldFile&quot;))
+	var screenshot3 = WDS.browser.getScreenshotAs(pkg.OutputType.FILE)
+	screenshot3.renameTo(new java.io.File(&apos;screenshot3.png&apos;))
+	var screenshot8 = WDS.browser.getScreenshotAs(pkg.OutputType.FILE)
+	screenshot8.renameTo(new java.io.File(&apos;screenshot8.png&apos;))
+	var urlInputFieldArray = WDS.browser.findElement(pkg.By.id(&apos;txta&apos;)).getAttribute(&apos;value&apos;)	
+	WDS.vars.put(&quot;urlInputFieldArray&quot;,urlInputFieldArray)
+	//WDS.log.info(&quot;URL Parameters: &quot;+urlInputFieldArray)
+	
+	var screenshot5 = WDS.browser.getScreenshotAs(pkg.OutputType.FILE)
+	screenshot5.renameTo(new java.io.File(&apos;screenshot5.png&apos;))
+	//WDS.browser.close();
+} catch (err) {
+   throw err
+}</stringProp>
+              <stringProp name="WebDriverSampler.parameters"></stringProp>
+              <stringProp name="WebDriverSampler.language">javascript</stringProp>
+            </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+            <hashTree>
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+                <stringProp name="ConstantTimer.delay">5000</stringProp>
+              </ConstantTimer>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If input payload is applicable" enabled="true">
+              <stringProp name="IfController.condition">&quot;${inputPayloadExistence}&quot;==&quot;yes&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Convert CSV to JSON - Input Payload" enabled="true">
+                <stringProp name="WebDriverSampler.script">try {
+	var pkg = JavaImporter(org.openqa.selenium)
+	var support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+	var wait = new support_ui.WebDriverWait(WDS.browser, 10000)
+	WDS.sampleResult.sampleStart()
+	WDS.sampleResult.getLatency()
+	WDS.browser.get(WDS.props.get(&quot;csvJSONConversionUtility&quot;))
+	var fileUploadTab = WDS.browser.findElement(pkg.By.linkText(&quot;Choose File&quot;))
+	fileUploadTab.click()
+	var fileUploadButton = WDS.browser.findElement(pkg.By.id(&apos;f1&apos;))
+	fileUploadButton.click()
+	fileUploadButton.sendKeys(WDS.vars.get(&quot;inputFile&quot;))
+	var screenshot1 = WDS.browser.getScreenshotAs(pkg.OutputType.FILE)
+	screenshot1.renameTo(new java.io.File(&apos;screenshot1.png&apos;))
+	screenshot1 = WDS.browser.getScreenshotAs(pkg.OutputType.FILE)
+	screenshot1.renameTo(new java.io.File(&apos;screenshot1.png&apos;))
+	var inputFileArray = WDS.browser.findElement(pkg.By.id(&apos;txta&apos;)).getAttribute(&apos;value&apos;)
+	WDS.vars.put(&quot;inputFieldsJsonArray&quot;,inputFileArray)
+	//WDS.log.info(inputFileArray)
+	//WDS.browser.close();
+} catch (err) {
+   throw err
+}</stringProp>
+                <stringProp name="WebDriverSampler.parameters"></stringProp>
+                <stringProp name="WebDriverSampler.language">javascript</stringProp>
+              </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+              <hashTree>
+                <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+                  <stringProp name="ConstantTimer.delay">5000</stringProp>
+                </ConstantTimer>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Convert CSV to JSON - Expected results" enabled="true">
+              <stringProp name="WebDriverSampler.script">try {
+	var pkg = JavaImporter(org.openqa.selenium)
+	var support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+	var wait = new support_ui.WebDriverWait(WDS.browser, 10000)
+	WDS.sampleResult.sampleStart()
+	WDS.sampleResult.getLatency()
+	WDS.browser.get(WDS.props.get(&quot;csvJSONConversionUtility&quot;))
+	var fileUploadTab = WDS.browser.findElement(pkg.By.linkText(&quot;Choose File&quot;))
+	var fileUploadButton = WDS.browser.findElement(pkg.By.id(&apos;f1&apos;))
+	fileUploadTab.click()
+	fileUploadButton.click()
+	WDS.browser.findElement(pkg.By.id(&apos;chkSkipEmpty&apos;)).click()
+	//document.getElementById(&quot;myCheck&quot;).checked
+	fileUploadButton.sendKeys(WDS.vars.get(&quot;expectedResultsFile&quot;))
+	var screenshot2 = WDS.browser.getScreenshotAs(pkg.OutputType.FILE)
+	screenshot2.renameTo(new java.io.File(&apos;screenshot2.png&apos;))
+	var screenshot4 = WDS.browser.getScreenshotAs(pkg.OutputType.FILE)
+	screenshot4.renameTo(new java.io.File(&apos;screenshot4.png&apos;))
+	var expectedResultsArray = WDS.browser.findElement(pkg.By.id(&apos;txta&apos;)).getAttribute(&apos;value&apos;)	
+	WDS.vars.put(&quot;expectedResultsArray&quot;,expectedResultsArray)
+	//WDS.log.info(&quot;Expected Results: &quot;+expectedResultsArray)
+
+	//WDS.browser.close();
+} catch (err) {
+   throw err
+}</stringProp>
+              <stringProp name="WebDriverSampler.parameters"></stringProp>
+              <stringProp name="WebDriverSampler.language">javascript</stringProp>
+            </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+            <hashTree>
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+                <stringProp name="ConstantTimer.delay">5000</stringProp>
+              </ConstantTimer>
+              <hashTree/>
+            </hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Store the input and expected files JSON post conversion" enabled="true">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store the input and expected files JSON post conversion" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="script">//Store input and expected files JSON post conversion
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.lang.*;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Store the input and expected files JSON post conversion - beanshell starts&quot;);
+	long millis = System.currentTimeMillis();
+	String trackingFile = vars.get(&quot;jsonWorkbenchPath&quot;).concat(&quot;jsonPayloadTracker_&quot;).concat(String.valueOf(millis)).concat(&quot;.csv&quot;);
+	vars.put(&quot;payloadTrackingFile&quot;,trackingFile);
+	f3 = new FileOutputStream(trackingFile,false);
+	f3.close();
+	JSONArray newInputFieldsArray = new JSONArray(vars.get(&quot;inputFieldsJsonArray&quot;));
+	if (debug) log.info(&quot;InputFields JSON Array: &quot;+vars.get(&quot;inputFieldsJsonArray&quot;));
+	JSONArray newExpectedResultsArray = new JSONArray(vars.get(&quot;expectedResultsArray&quot;));
+	if (debug) log.info(&quot;Expected Results JSON Array: &quot;+vars.get(&quot;expectedResultsArray&quot;));	
+	JSONArray newUrlInputFieldArray = new JSONArray(vars.get(&quot;urlInputFieldArray&quot;));
+	if (debug) log.info(&quot;URL Parameter Fields JSON Array: &quot;+vars.get(&quot;urlInputFieldArray&quot;));		
+	for (int i=0;i&lt;newUrlInputFieldArray.length();i++) {
+		String jsonPayloadFileName =&quot;&quot;;
+		if (vars.get(&quot;inputPayloadExistence&quot;).equals(&quot;yes&quot;)) {
+			jsonPayloadFileName = vars.get(&quot;timeStampedJsonPayloadPath&quot;).concat(&quot;testScenario_for_API__&quot;).concat(vars.get(&quot;apiName&quot;)).concat(String.valueOf(i+1)).concat(&quot;.json&quot;);
+		} 
+		String expectedResultsFileName = vars.get(&quot;timeStampedJSONWorkbenchResultsValidationPath&quot;).concat(&quot;expectedResults_for_API__&quot;).concat(vars.get(&quot;apiName&quot;)).concat(String.valueOf(i+1)).concat(&quot;.json&quot;);
+		String urlInputFieldFileName = vars.get(&quot;timeStampedJsonWorkbenchURLParametersPath&quot;).concat(&quot;urlInputFields_for_API__&quot;).concat(vars.get(&quot;apiName&quot;)).concat(String.valueOf(i+1)).concat(&quot;.json&quot;);
+		//create JSON Payload and expected results Tracking File
+		f2 = new FileOutputStream(trackingFile,true);
+		PrintStream p2 = new PrintStream(f2);
+		this.interpreter.setOut(p2); 
+		print((i+1)+&quot;,&quot;+jsonPayloadFileName+&quot;,&quot;+expectedResultsFileName+&quot;,&quot;+urlInputFieldFileName);
+		f2.close();
+		//Create JSON Payload file
+		if (vars.get(&quot;inputPayloadExistence&quot;).equals(&quot;yes&quot;)) {
+			f = new FileOutputStream(jsonPayloadFileName, false);
+			p = new PrintStream(f); 
+			this.interpreter.setOut(p); 
+			print(newInputFieldsArray.getJSONObject(i));
+			f.close();
+			System.out.println(&quot;18001&quot;);
+		}
+		//Create Expected Payload file
+		f4 = new FileOutputStream(expectedResultsFileName, false);
+		p4 = new PrintStream(f4); 
+		this.interpreter.setOut(p4); 
+		print(newExpectedResultsArray.getJSONObject(i));
+		f4.close();	
+		//Create URLInputField File	
+		f5 = new FileOutputStream(urlInputFieldFileName, false);
+		p5 = new PrintStream(f5); 
+		this.interpreter.setOut(p5); 
+		print(newUrlInputFieldArray.getJSONObject(i));
+		f5.close();	
+System.out.println(&quot;18002&quot;);
+	}
+	if (debug) log.info(&quot;Store the input and expected files JSON post conversion - beanshell ends&quot;);
+} catch(Exception e) {
+	String errorCode=&quot;1800&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}
+</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Find the number of scenarios to be validated" enabled="true">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">String fileName = vars.get(&quot;payloadTrackingFile&quot;);
+log.info(&quot;Filename: &quot;+fileName);
+int numberOfRowsInCSV=0;
+
+BufferedReader brTest = new BufferedReader(new FileReader(fileName));
+		while ((line = brTest.readLine()) != null) {
+			numberOfRowsInCSV++;
+		}
+brTest.close();
+vars.put(&quot;numberOfRowsInCSV&quot;,String.valueOf(numberOfRowsInCSV));</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+              <boolProp name="LoopController.continue_forever">true</boolProp>
+              <stringProp name="LoopController.loops">${numberOfRowsInCSV}</stringProp>
+            </LoopController>
+            <hashTree>
+              <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Read data from payload tracker" enabled="true">
+                <boolProp name="WAITING">true</boolProp>
+                <boolProp name="SUCCESFULL">true</boolProp>
+                <stringProp name="RESPONSE_CODE">200</stringProp>
+                <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+                <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+                <stringProp name="RESPONSE_DATA">${__CSVRead(${payloadTrackingFile},0)}|${__CSVRead(${payloadTrackingFile},1)}|${__CSVRead(${payloadTrackingFile},2)}|${__CSVRead(${payloadTrackingFile},3)}${__CSVRead(${payloadTrackingFile},next)}</stringProp>
+                <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+                <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+                <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+              </kg.apc.jmeter.samplers.DummySampler>
+              <hashTree>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">//testScenarioNumber,payloadFilePath,expectedResultsFilePath,urlInputFieldsFilePath
+String responseMsg = prev.getResponseDataAsString();
+log.info(responseMsg);
+String[] responseMsgSplit = responseMsg.split(&quot;\\|&quot;);
+vars.put(&quot;testScenarioNumber&quot;,responseMsgSplit[0]);
+vars.put(&quot;payloadFilePath&quot;,responseMsgSplit[1]);
+vars.put(&quot;expectedResultsFilePath&quot;,responseMsgSplit[2]);
+vars.put(&quot;urlInputFieldsFilePath&quot;,responseMsgSplit[3]);
+log.info(responseMsgSplit[0]);
+log.info(responseMsgSplit[1]);
+log.info(responseMsgSplit[2]);
+log.info(responseMsgSplit[3]);</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+              </hashTree>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
+                <stringProp name="delimiter">,</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="filename">${jsonWorkbenchPath}jsonPayloadTracker.csv</stringProp>
+                <boolProp name="ignoreFirstLine">false</boolProp>
+                <boolProp name="quotedData">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
+                <stringProp name="shareMode">shareMode.all</stringProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="variableNames">testScenarioNumber,payloadFilePath,expectedResultsFilePath,urlInputFieldsFilePath</stringProp>
+              </CSVDataSet>
+              <hashTree/>
+              <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Consume CSV Data " enabled="false">
+                <stringProp name="TestPlan.comments">This is to ensure that the expected test results of the 8th test scenario is not validated against the 9th test case</stringProp>
+                <boolProp name="WAITING">true</boolProp>
+                <boolProp name="SUCCESFULL">true</boolProp>
+                <stringProp name="RESPONSE_CODE">200</stringProp>
+                <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+                <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+                <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+                <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+                <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+                <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+              </kg.apc.jmeter.samplers.DummySampler>
+              <hashTree>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">vars.put(&quot;dummyTestScenarioNumber&quot;,vars.get(&quot;testScenarioNumber&quot;));
+vars.put(&quot;dummyPayloadFilePath&quot;,vars.get(&quot;payloadFilePath&quot;));
+vars.put(&quot;dummyExpectedResultsFilePath&quot;,vars.get(&quot;expectedResultsFilePath&quot;));
+vars.put(&quot;dummyURLInputFieldsPath&quot;,vars.get(&quot;urlInputFieldsFilePath&quot;));
+log.info(vars.get(&quot;dummyTestScenarioNumber&quot;));
+log.info(vars.get(&quot;dummyPayloadFilePath&quot;));
+log.info(vars.get(&quot;dummyExpectedResultsFilePath&quot;));
+log.info(vars.get(&quot;dummyURLInputFieldsPath&quot;));</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                <stringProp name="IfController.condition">&quot;${testScenarioNumber}&quot;!=&quot;&lt;EOF&gt;&quot;</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+              </IfController>
+              <hashTree>
+                <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Read Expected Results into a variable" enabled="true">
+                  <boolProp name="WAITING">true</boolProp>
+                  <boolProp name="SUCCESFULL">true</boolProp>
+                  <stringProp name="RESPONSE_CODE">200</stringProp>
+                  <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+                  <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+                  <stringProp name="RESPONSE_DATA">${__FileToString(${expectedResultsFilePath},,expectedResults)}</stringProp>
+                  <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+                  <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+                  <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+                </kg.apc.jmeter.samplers.DummySampler>
+                <hashTree/>
+                <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If input payload is applicable" enabled="true">
+                  <stringProp name="IfController.condition">&quot;${inputPayloadExistence}&quot;==&quot;yes&quot;</stringProp>
+                  <boolProp name="IfController.evaluateAll">false</boolProp>
+                </IfController>
+                <hashTree>
+                  <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Read JSON Payload into a variable" enabled="true">
+                    <boolProp name="WAITING">true</boolProp>
+                    <boolProp name="SUCCESFULL">true</boolProp>
+                    <stringProp name="RESPONSE_CODE">200</stringProp>
+                    <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+                    <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+                    <stringProp name="RESPONSE_DATA">${__FileToString(${payloadFilePath},,jsonPayload)}</stringProp>
+                    <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+                    <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+                    <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+                  </kg.apc.jmeter.samplers.DummySampler>
+                  <hashTree/>
+                </hashTree>
+                <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Read URL Parameter into a variable" enabled="true">
+                  <boolProp name="WAITING">true</boolProp>
+                  <boolProp name="SUCCESFULL">true</boolProp>
+                  <stringProp name="RESPONSE_CODE">200</stringProp>
+                  <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+                  <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+                  <stringProp name="RESPONSE_DATA">${__FileToString(${urlInputFieldsFilePath},,urlInputParameters)}</stringProp>
+                  <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+                  <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+                  <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+                </kg.apc.jmeter.samplers.DummySampler>
+                <hashTree/>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Bearer Token" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&#xd;
+  &quot;grant_type&quot;: &quot;password&quot;,&#xd;
+  &quot;username&quot;: &quot;operator&quot;,&#xd;
+  &quot;password&quot;: &quot;SW5pdDFAbDE=&quot;,&#xd;
+  &quot;refreshTokenParam&quot;: null&#xd;
+}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${__P(server)}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">http</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">/identity/v1/token</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">${__P(server)}</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">X-Tenant-Identifier</stringProp>
+                        <stringProp name="Header.value">wepemnefret</stringProp>
+                      </elementProp>
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">uuid</stringProp>
+                        <stringProp name="Header.value">asdkasd</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">X-Tenant-Identifier</stringProp>
+                        <stringProp name="Header.value">playground</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">bearerToken</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <stringProp name="JSONPostProcessor.defaultValues">notAvailable</stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="API Name - ${apiName}" enabled="true">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${__P(server)}</stringProp>
+                  <stringProp name="HTTPSampler.port">${__P(port)}</stringProp>
+                  <stringProp name="HTTPSampler.protocol">${__P(protocol)}</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path"></stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout">120000</stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">${__P(server)}</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers"/>
+                  </HeaderManager>
+                  <hashTree/>
+                  <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Manage HTTP  Headers and api method for the REST API" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">//Add any additional headers as required
+import org.apache.jmeter.protocol.http.control.Header;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.util.*;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Manage HTTP  Headers and api method for the REST API - beanshell starts&quot;);
+	sampler.setMethod(vars.get(&quot;apiMethod&quot;)); 
+	JSONObject urlInputFields = new JSONObject(vars.get(&quot;urlInputParameters&quot;));
+	if (debug) log.info(&quot;URL Input fields: &quot;+urlInputFields.toString());
+	if (urlInputFields.getString(&quot;urlParameter&quot;).length()&gt;0 &amp;&amp; !urlInputFields.getString(&quot;urlParameter&quot;).equals(&quot;NA&quot;)) {
+		sampler.setPath(vars.get(&quot;apiPath&quot;).concat(&quot;/&quot;).concat(urlInputFields.getString(&quot;urlParameter&quot;)));
+	} else {
+		sampler.setPath(vars.get(&quot;apiPath&quot;));
+	}
+	if (vars.get(&quot;inputPayloadExistence&quot;).equals(&quot;yes&quot;)) {
+		if (vars.get(&quot;jsonPayload&quot;).length()&gt;5) {
+			sampler.setPostBodyRaw(true);
+			sampler.addNonEncodedArgument(&quot;&quot;,vars.get(&quot;jsonPayload&quot;),&quot;&quot;);
+		}
+	}
+	String apiHeadersString = &quot;&quot;;
+	if (vars.get(&quot;apiMethod&quot;).equals(&quot;PUT&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;GET&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;POST&quot;)) apiHeadersString=vars.get(&quot;apiHeadersGETPUT&quot;); 
+	else apiHeadersString=vars.get(&quot;apiHeaders&quot;);
+	log.info(&quot;API Header String: &quot;+apiHeadersString);
+	/*Collection c = sampler.getHeaderManager().getHeaders();
+	for (Iterator i = c.iterator(); i.hasNext();) { 
+       log.info(i.next());
+	}*/
+       
+	int countOfExistingHeaders = sampler.getHeaderManager().size();
+	if (debug) log.info(&quot;Count of headers: &quot;+String.valueOf(countOfExistingHeaders));
+	if (countOfExistingHeaders==0) {
+		//log.info(&quot;3&quot;);
+		JSONObject apiHeadersObject = new JSONObject(apiHeadersString);
+		//log.info(&quot;4&quot;);
+		Iterator newKeys = apiHeadersObject.keys();
+		while (newKeys.hasNext()) {
+			String newKey = newKeys.next();
+			sampler.getHeaderManager().add(new Header(newKey,apiHeadersObject.getString(newKey)));
+		}
+		sampler.getHeaderManager().removeHeaderNamed(&quot;Authorization&quot;);
+		if (vars.get(&quot;apiMethod&quot;).equals(&quot;PUT&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;GET&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;POST&quot;))   {
+			sampler.getHeaderManager().add(new Header(&quot;Authorization&quot;,vars.get(&quot;bearerToken&quot;)));
+		}
+	} else {
+		sampler.getHeaderManager().removeHeaderNamed(&quot;Authorization&quot;);
+		if (vars.get(&quot;apiMethod&quot;).equals(&quot;PUT&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;GET&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;POST&quot;))   {
+			sampler.getHeaderManager().add(new Header(&quot;Authorization&quot;,vars.get(&quot;bearerToken&quot;)));
+		}
+	}
+
+
+	/*if (vars.get(&quot;apiMethod&quot;).equals(&quot;GET&quot;)) {
+		sampler.setMethod(&quot;GET&quot;); 
+		JSONObject jsonPayloadForGet = new JSONObject(vars.get(&quot;jsonPayload&quot;));
+		sampler.setPath(vars.get(&quot;apiPath&quot;).concat(&quot;/&quot;).concat(jsonPayloadForGet.getString(&quot;inputField&quot;)));
+	}
+	if (vars.get(&quot;apiMethod&quot;).equals(&quot;POST&quot;)) {
+		sampler.setMethod(&quot;POST&quot;); 	
+		sampler.setPath(vars.get(&quot;apiPath&quot;));
+		sampler.setPostBodyRaw(true);
+		sampler.addNonEncodedArgument(&quot;&quot;,vars.get(&quot;jsonPayload&quot;),&quot;&quot;);		
+	}*/
+	if (debug) log.info(&quot;Manage HTTP  Headers and api method for the REST API - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;1900&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}
+</stringProp>
+                  </BeanShellPreProcessor>
+                  <hashTree/>
+                  <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Store the payload injection date and time" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">//Store the payload injection date and time
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import org.apache.jmeter.util.JMeterUtils;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Store the payload injection date and time - beanshell starts&quot;);
+	SimpleDateFormat dateFormatter = new SimpleDateFormat(&quot;dd-MM-yyyy&quot;);
+	SimpleDateFormat timeFormatter = new SimpleDateFormat(&quot;hhmma&quot;);
+	Calendar cal = Calendar.getInstance();
+	String payloadInjectionDate = dateFormatter.format(cal.getTime());
+	String payloadInjectionTime = timeFormatter.format(cal.getTime());
+	vars.put(&quot;payloadInjectionDate&quot;,payloadInjectionDate);
+	vars.put(&quot;payloadInjectionTime&quot;,payloadInjectionTime);
+	if (debug) log.info(&quot;Store the payload injection date and time - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;2000&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode);
+	f.close();
+}</stringProp>
+                  </BeanShellPreProcessor>
+                  <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store response JSON and validate response code" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">//Store results JSON in the appropriate folder
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import org.apache.jmeter.util.JMeterUtils;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Store response JSON and validate response code - beanshell starts&quot;);
+	String jsonResultsFileName = vars.get(&quot;timeStampedJsonOutputPath&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;jsonOutput&quot;).concat(&quot;_&quot;).concat(vars.get(&quot;testScenarioNumber&quot;)).concat(&quot;.json&quot;);
+	vars.put(&quot;jsonResultsFileName&quot;,jsonResultsFileName);
+	if (debug) log.info(jsonResultsFileName);
+	f = new FileOutputStream(jsonResultsFileName, true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(prev.getResponseDataAsString());
+	f.close();
+	//Create JSON Object for Actual Results
+	JSONObject actualResult = new JSONObject();
+	if (prev.getResponseDataAsString().toString().length()&gt;0) {
+		actualResult = new JSONObject(prev.getResponseDataAsString());
+	}
+	//validate response Code
+	String expectedResults = vars.get(&quot;expectedResults&quot;);
+	JSONObject expectedResultsJSON = new JSONObject(expectedResults);
+	int expectedResponseCode = expectedResultsJSON.get(&quot;expectedResponseCode&quot;);
+	//JSONObject newExpectedResults after trimming the expected response code;
+	if (String.valueOf(expectedResponseCode).equals(prev.getResponseCode())) {
+		JSONObject newExpectedResult = new JSONObject();
+		Iterator keys = expectedResultsJSON.keys();
+		while(keys.hasNext()) {
+		    String key = keys.next();
+		    if (!key.equals(&quot;expectedResponseCode&quot;)) {
+	    			newExpectedResult.put(key,expectedResultsJSON.get(key));
+		    }
+		}
+		if (debug) log.info(actualResult.toString());
+		if (debug) log.info(newExpectedResult.toString());
+		vars.put(&quot;newExpectedResult&quot;,newExpectedResult.toString());
+		vars.put(&quot;responseCodeValidation&quot;,&quot;PASS&quot;);
+	} else {
+		vars.put(&quot;responseCodeValidation&quot;,&quot;FAIL&quot;); 
+	}
+	if (debug) log.info(&quot;Store response JSON and validate response code - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;2100&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error in module &quot;+errorCode+&quot;:&quot;+e.toString());
+	f.close();
+}
+</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Validate individual elements in JSON with that of the expected results" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">//Validate individual elements in JSON
+import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import com.github.wnameless.json.flattener.JsonFlattener;
+try {
+	Boolean debug;
+	String errorCode=&quot;&quot;;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Validate individual elements in JSON with that of the expected results - beanshell starts&quot;);
+	String testResult;
+	String reasonForFailure=&quot;&quot;;
+	if (vars.get(&quot;responseCodeValidation&quot;).equals(&quot;PASS&quot;)) {
+		String jsonStringActualResults = prev.getResponseDataAsString().toString();
+		if (debug) log.info(&quot;JSON String Expected Results&quot;);
+		if (debug) log.info(vars.get(&quot;newExpectedResult&quot;));
+		if (debug) log.info(&quot;JSON String Modified Results&quot;);
+		Map checkMap = JsonFlattener.flattenAsMap(vars.get(&quot;newExpectedResult&quot;));
+		JSONObject checkMapJSONObject = new JSONObject(checkMap.toString());
+		Iterator checkKeys = checkMapJSONObject.keys();
+		int emptyKey=0;
+		int count=0;
+		while (checkKeys.hasNext()) {
+			count++;
+			String checkKey = checkKeys.next();
+			if (checkMapJSONObject.get(checkKey).toString().equals(&quot;{}&quot;)) {
+				emptyKey++;
+			}
+		}
+		String expectedResultsModified = &quot;{}&quot;;
+		if (count!=emptyKey)
+			expectedResultsModified = vars.get(&quot;newExpectedResult&quot;).replace(&quot;{},&quot;,&quot;&quot;).replace(&quot;{}]&quot;,&quot;]&quot;).replace(&quot;{}}&quot;,&quot;}&quot;)
+			.replace(&quot;,]&quot;,&quot;]&quot;).replace(&quot;,}&quot;,&quot;}&quot;);
+		if (debug) log.info(&quot;Expected Rsults modified&quot;);
+		if (debug) log.info(expectedResultsModified);
+		if (new JSONObject(expectedResultsModified).length() &gt; 0) {
+				Map flattenedJsonMapActualResults = JsonFlattener.flattenAsMap(jsonStringActualResults);
+				Map flattenedJsonMapExpectedResults = JsonFlattener.flattenAsMap(expectedResultsModified);
+				JSONObject flatteneddActualResults = new JSONObject(flattenedJsonMapActualResults.toString());
+				JSONObject flatteneddExpectedResults = new JSONObject(flattenedJsonMapExpectedResults.toString());
+				if (debug) log.info(&quot;Expected Results&quot;);
+			 	if (debug) log.info(flatteneddExpectedResults.toString());
+				if (debug) log.info(&quot;Actual Results&quot;);
+				if (debug) log.info(flatteneddActualResults.toString());
+				Iterator newKeys = flatteneddExpectedResults.keys();
+				while (newKeys.hasNext()) {
+					String newKey = newKeys.next();
+					if (flatteneddActualResults.has(newKey)) {
+						Object expectedResultObject= flatteneddExpectedResults.get(newKey);
+						Object actualResultObject = flatteneddActualResults.get(newKey);
+						if (expectedResultObject instanceof String) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a String and its value is &quot;+String.valueOf(expectedResultObject)); 
+							if (debug) log.info(&quot;Actual =&gt;&quot; +newKey+&quot; is a String and its value is &quot;+String.valueOf(actualResultObject)); 
+							if (String.valueOf(actualResultObject).equals(&quot;null&quot;)) {
+								actualResultObject=&quot;&quot;;
+							}
+							if (String.valueOf(expectedResultObject).equals(String.valueOf(actualResultObject))) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} else if (expectedResultObject instanceof Integer) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Integer and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Integer and its value is &quot;+String.valueOf(actualResultObject));			
+							//double expected = (double)expectedResultObject;
+							//double actual = (double) actualResultObject;
+							double expected = (double) Integer.parseInt(String.valueOf(expectedResultObject));
+							double actual = (double) Double.parseDouble(String.valueOf(actualResultObject));
+							
+							if (Double.compare(expected,actual) == 0) {
+							//if (String.valueOf(expectedResultObject).equals(String.valueOf(actualResultObject))) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} else if (expectedResultObject instanceof Double) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Double and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Double and its value is &quot;+String.valueOf(actualResultObject));			
+							if (Double.compare(expectedResultObject,actualResultObject) == 0) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+					
+						} else if (expectedResultObject instanceof Boolean) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Boolean and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Boolean and its value is &quot;+String.valueOf(actualResultObject));			
+					
+							if (expectedResultObject==actualResultObject) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} 
+						if (testResult.equals(&quot;FAIL&quot;)) {
+							reasonForFailure = reasonForFailure.concat(&quot;|&quot;).concat(&quot;Expected value for &quot;).concat(newKey).concat(&quot; is &quot;).concat(String.valueOf(expectedResultObject)).concat(&quot; and actual value is &quot;).concat(String.valueOf(actualResultObject));
+							if (debug) log.info(&quot;Reason For Failure: &quot;+reasonForFailure);
+							//break;
+						}
+					} else {
+						testResult = &quot;FAIL&quot;;
+						reasonForFailure = reasonForFailure.concat(&quot;|&quot;).concat(newKey).concat(&quot; not present in the results JSON Object&quot;);
+						//break;
+					}
+				}
+		} else {
+			testResult = &quot;PASS&quot;;
+		}
+	} else {
+		testResult = &quot;FAIL&quot;;
+		reasonForFailure = &quot;Actual response code received is &quot;+prev.getResponseCode();
+	}
+	if (reasonForFailure.length()&gt;0) testResult=&quot;FAIL&quot;;
+	
+	//Store Results in a csv file
+	String resultToBeStored =vars.get(&quot;payloadInjectionDate&quot;).concat(&quot;,&quot;).concat(vars.get(&quot;payloadInjectionTime&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;testScenarioNumber&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;payloadFilePath&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;jsonResultsFileName&quot;)).concat(&quot;,&quot;).concat(testResult).concat(&quot;,&quot;).concat(reasonForFailure);
+	if (debug) log.info(resultToBeStored);
+	f = new FileOutputStream(vars.get(&quot;apiResultsFileName&quot;),true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(resultToBeStored);
+	f.close();
+	String overallResult = vars.get(&quot;apiTestResult&quot;);
+	if (testResult.equals(&quot;FAIL&quot;)) vars.put(&quot;apiTestResult&quot;,&quot;FAIL&quot;);
+	if (debug) log.info(&quot;Validate individual elements in JSON with that of the expected results - beanshell ends&quot;); 
+} catch (Exception e) {
+	String errorCode=&quot;2200&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+            </hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Write overall test data and tidy up workbench" enabled="true">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Write overall test data" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//	print(&quot;Test Execution Date,Execution Time,API Name,API Payload Input file,Test Result&quot;);
+try {
+	Boolean debug;
+	String errorCode=&quot;&quot;;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Record overall test results  - beanshell starts&quot;);
+	String resultToBeStored =vars.get(&quot;payloadInjectionDate&quot;).concat(&quot;,&quot;).concat(vars.get(&quot;payloadInjectionTime&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;apiInputsFile&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;apiTestResult&quot;));
+	if (debug) log.info(resultToBeStored);
+	f = new FileOutputStream(vars.get(&quot;overallResultsFileName&quot;),true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(resultToBeStored);
+	f.close();
+} catch (Exception e) {
+	String errorCode=&quot;2610&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Tidy-up workbench before taking up the next API" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Tidy-up=&gt;Move the payload tracker file to the timestamped workbench folder
+import java.io.File;
+import java.io.IOException;
+import java.lang.*;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Tidy-up workbench before taking up the next API - beanshell starts&quot;);
+	String newLocation = vars.get(&quot;timeStampedJSONWorkbenchResultsValidationPath&quot;).concat(&quot;JsonPayloadTracker_&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;_&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(&quot;.csv&quot;);
+	new File(vars.get(&quot;payloadTrackingFile&quot;)).renameTo(new File(newLocation));
+	
+	if (debug) log.info(&quot;Tidy-up workbench before taking up the next API - beanshell ends&quot;);
+	vars.put(&quot;apiTestResult&quot;,&quot;PASS&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;2300&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), false);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode);
+	f.close();
+}</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="false">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers"/>
+              </HeaderManager>
+              <hashTree/>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Manage HTTP  Headers and api method for the REST API" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Add any additional headers as required
+import org.apache.jmeter.protocol.http.control.Header;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.util.*;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Manage HTTP  Headers and api method for the REST API - beanshell starts&quot;);
+	sampler.setMethod(vars.get(&quot;apiMethod&quot;)); 
+	JSONObject urlInputFields = new JSONObject(vars.get(&quot;urlInputParameters&quot;));
+	if (debug) log.info(&quot;URL Input fields: &quot;+urlInputFields.toString());
+	if (urlInputFields.getString(&quot;urlParameter&quot;).length()&gt;0 &amp;&amp; !urlInputFields.getString(&quot;urlParameter&quot;).equals(&quot;NA&quot;)) {
+		sampler.setPath(vars.get(&quot;apiPath&quot;).concat(&quot;/&quot;).concat(urlInputFields.getString(&quot;urlParameter&quot;)));
+	} else {
+		sampler.setPath(vars.get(&quot;apiPath&quot;));
+	}
+	//log.info(&quot;1&quot;);
+	if (vars.get(&quot;inputPayloadExistence&quot;).equals(&quot;yes&quot;)) {
+		if (vars.get(&quot;jsonPayload&quot;).length()&gt;5) {
+			sampler.setPostBodyRaw(true);
+			sampler.addNonEncodedArgument(&quot;&quot;,vars.get(&quot;jsonPayload&quot;),&quot;&quot;);
+		}
+	}
+		//log.info(&quot;2&quot;);
+	String apiHeadersString = &quot;&quot;;
+	if (vars.get(&quot;apiMethod&quot;).equals(&quot;PUT&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;GET&quot;)) apiHeadersString=vars.get(&quot;apiHeadersGETPUT&quot;); 
+	else apiHeadersString=vars.get(&quot;apiHeaders&quot;);
+	log.info(&quot;API Header String: &quot;+apiHeadersString);
+	/*Collection c = sampler.getHeaderManager().getHeaders();
+	for (Iterator i = c.iterator(); i.hasNext();) { 
+       log.info(i.next());
+	}*/
+       
+	int countOfExistingHeaders = sampler.getHeaderManager().size();
+	if (debug) log.info(&quot;Count of headers: &quot;+String.valueOf(countOfExistingHeaders));
+	if (countOfExistingHeaders==0) {
+		//log.info(&quot;3&quot;);
+		JSONObject apiHeadersObject = new JSONObject(apiHeadersString);
+		//log.info(&quot;4&quot;);
+		Iterator newKeys = apiHeadersObject.keys();
+		while (newKeys.hasNext()) {
+			String newKey = newKeys.next();
+			sampler.getHeaderManager().add(new Header(newKey,apiHeadersObject.getString(newKey)));
+		}
+		if (vars.get(&quot;apiMethod&quot;).equals(&quot;PUT&quot;) || vars.get(&quot;apiMethod&quot;).equals(&quot;GET&quot;)) {
+			sampler.getHeaderManager().add(new Header(&quot;Authorization&quot;,vars.get(&quot;bearerToken&quot;)));
+		}
+	}
+
+
+	/*if (vars.get(&quot;apiMethod&quot;).equals(&quot;GET&quot;)) {
+		sampler.setMethod(&quot;GET&quot;); 
+		JSONObject jsonPayloadForGet = new JSONObject(vars.get(&quot;jsonPayload&quot;));
+		sampler.setPath(vars.get(&quot;apiPath&quot;).concat(&quot;/&quot;).concat(jsonPayloadForGet.getString(&quot;inputField&quot;)));
+	}
+	if (vars.get(&quot;apiMethod&quot;).equals(&quot;POST&quot;)) {
+		sampler.setMethod(&quot;POST&quot;); 	
+		sampler.setPath(vars.get(&quot;apiPath&quot;));
+		sampler.setPostBodyRaw(true);
+		sampler.addNonEncodedArgument(&quot;&quot;,vars.get(&quot;jsonPayload&quot;),&quot;&quot;);		
+	}*/
+	if (debug) log.info(&quot;Manage HTTP  Headers and api method for the REST API - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;1900&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}
+</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Store the payload injection date and time" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Store the payload injection date and time
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import org.apache.jmeter.util.JMeterUtils;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Store the payload injection date and time - beanshell starts&quot;);
+	SimpleDateFormat dateFormatter = new SimpleDateFormat(&quot;dd-MM-yyyy&quot;);
+	SimpleDateFormat timeFormatter = new SimpleDateFormat(&quot;hhmma&quot;);
+	Calendar cal = Calendar.getInstance();
+	String payloadInjectionDate = dateFormatter.format(cal.getTime());
+	String payloadInjectionTime = timeFormatter.format(cal.getTime());
+	vars.put(&quot;payloadInjectionDate&quot;,payloadInjectionDate);
+	vars.put(&quot;payloadInjectionTime&quot;,payloadInjectionTime);
+	if (debug) log.info(&quot;Store the payload injection date and time - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;2000&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode);
+	f.close();
+}</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store response JSON and validate response code" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Store results JSON in the appropriate folder
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import org.apache.jmeter.util.JMeterUtils;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Store response JSON and validate response code - beanshell starts&quot;);
+	String jsonResultsFileName = vars.get(&quot;timeStampedJsonOutputPath&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;jsonOutput&quot;).concat(&quot;_&quot;).concat(vars.get(&quot;testScenarioNumber&quot;)).concat(&quot;.json&quot;);
+	vars.put(&quot;jsonResultsFileName&quot;,jsonResultsFileName);
+	if (debug) log.info(jsonResultsFileName);
+	f = new FileOutputStream(jsonResultsFileName, true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(prev.getResponseDataAsString());
+	f.close();
+	//Create JSON Object for Actual Results
+	JSONObject actualResult = new JSONObject();
+	if (prev.getResponseDataAsString().toString().length()&gt;0) {
+		actualResult = new JSONObject(prev.getResponseDataAsString());
+	}
+	//validate response Code
+	String expectedResults = vars.get(&quot;expectedResults&quot;);
+	JSONObject expectedResultsJSON = new JSONObject(expectedResults);
+	int expectedResponseCode = expectedResultsJSON.get(&quot;expectedResponseCode&quot;);
+	//JSONObject newExpectedResults after trimming the expected response code;
+	if (String.valueOf(expectedResponseCode).equals(prev.getResponseCode())) {
+		JSONObject newExpectedResult = new JSONObject();
+		Iterator keys = expectedResultsJSON.keys();
+		while(keys.hasNext()) {
+		    String key = keys.next();
+		    if (!key.equals(&quot;expectedResponseCode&quot;)) {
+	    			newExpectedResult.put(key,expectedResultsJSON.get(key));
+		    }
+		}
+		if (debug) log.info(actualResult.toString());
+		if (debug) log.info(newExpectedResult.toString());
+		vars.put(&quot;newExpectedResult&quot;,newExpectedResult.toString());
+		vars.put(&quot;responseCodeValidation&quot;,&quot;PASS&quot;);
+	} else {
+		vars.put(&quot;responseCodeValidation&quot;,&quot;FAIL&quot;); 
+	}
+	if (debug) log.info(&quot;Store response JSON and validate response code - beanshell ends&quot;);
+} catch (Exception e) {
+	String errorCode=&quot;2100&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error in module &quot;+errorCode+&quot;:&quot;+e.toString());
+	f.close();
+}
+</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Validate individual elements in JSON with that of the expected results" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Validate individual elements in JSON
+import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import com.github.wnameless.json.flattener.JsonFlattener;
+try {
+	Boolean debug;
+	String errorCode=&quot;&quot;;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Validate individual elements in JSON with that of the expected results - beanshell starts&quot;);
+	String testResult;
+	String reasonForFailure=&quot;&quot;;
+	if (vars.get(&quot;responseCodeValidation&quot;).equals(&quot;PASS&quot;)) {
+		String jsonStringActualResults = prev.getResponseDataAsString().toString();
+		if (debug) log.info(&quot;JSON String Expected REsults&quot;);
+		if (debug) log.info(vars.get(&quot;newExpectedResult&quot;));
+		if (debug) log.info(&quot;JSON String Modified REsults&quot;);
+		Map checkMap = JsonFlattener.flattenAsMap(vars.get(&quot;newExpectedResult&quot;));
+		JSONObject checkMapJSONObject = new JSONObject(checkMap.toString());
+		Iterator checkKeys = checkMapJSONObject.keys();
+		int emptyKey=0;
+		int count=0;
+		while (checkKeys.hasNext()) {
+			count++;
+			String checkKey = checkKeys.next();
+			if (checkMapJSONObject.get(checkKey).toString().equals(&quot;{}&quot;)) {
+				emptyKey++;
+			}
+		}
+		String expectedResultsModified = &quot;{}&quot;;
+		if (count!=emptyKey)
+			expectedResultsModified = vars.get(&quot;newExpectedResult&quot;).replace(&quot;{},&quot;,&quot;&quot;).replace(&quot;{}]&quot;,&quot;]&quot;).replace(&quot;{}}&quot;,&quot;}&quot;)
+			.replace(&quot;,]&quot;,&quot;]&quot;).replace(&quot;,}&quot;,&quot;}&quot;);
+		if (debug) log.info(&quot;Expected Rsults modified&quot;);
+		if (debug) log.info(expectedResultsModified);
+		if (new JSONObject(expectedResultsModified).length() &gt; 0) {
+				Map flattenedJsonMapActualResults = JsonFlattener.flattenAsMap(jsonStringActualResults);
+				Map flattenedJsonMapExpectedResults = JsonFlattener.flattenAsMap(expectedResultsModified);
+				JSONObject flatteneddActualResults = new JSONObject(flattenedJsonMapActualResults.toString());
+				JSONObject flatteneddExpectedResults = new JSONObject(flattenedJsonMapExpectedResults.toString());
+				if (debug) log.info(&quot;Expected Results&quot;);
+			 	if (debug) log.info(flatteneddExpectedResults.toString());
+				if (debug) log.info(&quot;Actual Results&quot;);
+				if (debug) log.info(flatteneddActualResults.toString());
+				Iterator newKeys = flatteneddExpectedResults.keys();
+				while (newKeys.hasNext()) {
+					String newKey = newKeys.next();
+					if (flatteneddActualResults.has(newKey)) {
+						Object expectedResultObject= flatteneddExpectedResults.get(newKey);
+						Object actualResultObject = flatteneddActualResults.get(newKey);
+						if (expectedResultObject instanceof String) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a String and its value is &quot;+String.valueOf(expectedResultObject)); 
+							if (debug) log.info(&quot;Actual =&gt;&quot; +newKey+&quot; is a String and its value is &quot;+String.valueOf(actualResultObject)); 
+							if (String.valueOf(actualResultObject).equals(&quot;null&quot;)) {
+								actualResultObject=&quot;&quot;;
+							}
+							if (String.valueOf(expectedResultObject).equals(String.valueOf(actualResultObject))) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} else if (expectedResultObject instanceof Integer) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Integer and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Integer and its value is &quot;+String.valueOf(actualResultObject));			
+							double expected = (double)expectedResultObject;
+							double actual = (double) actualResultObject;
+							if (Double.compare(expected,actual) == 0) {
+							//if (String.valueOf(expectedResultObject).equals(String.valueOf(actualResultObject))) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} else if (expectedResultObject instanceof Double) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Double and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Double and its value is &quot;+String.valueOf(actualResultObject));			
+							if (Double.compare(expectedResultObject,actualResultObject) == 0) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+					
+						} else if (expectedResultObject instanceof Boolean) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Boolean and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Boolean and its value is &quot;+String.valueOf(actualResultObject));			
+					
+							if (expectedResultObject==actualResultObject) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} 
+						if (testResult.equals(&quot;FAIL&quot;)) {
+							reasonForFailure = reasonForFailure.concat(&quot;|&quot;).concat(&quot;Expected value for &quot;).concat(newKey).concat(&quot; is &quot;).concat(String.valueOf(expectedResultObject)).concat(&quot; and actual value is &quot;).concat(String.valueOf(actualResultObject));
+							if (debug) log.info(&quot;Reason For Failure: &quot;+reasonForFailure);
+							//break;
+						}
+					} else {
+						testResult = &quot;FAIL&quot;;
+						reasonForFailure = reasonForFailure.concat(&quot;|&quot;).concat(newKey).concat(&quot; not present in the results JSON Object&quot;);
+						//break;
+					}
+				}
+		} else {
+			testResult = &quot;PASS&quot;;
+		}
+	} else {
+		testResult = &quot;FAIL&quot;;
+		reasonForFailure = &quot;Actual response code received is &quot;+prev.getResponseCode();
+	}
+	if (reasonForFailure.length()&gt;0) testResult=&quot;FAIL&quot;;
+	//Store Results in a csv file
+	String resultToBeStored =vars.get(&quot;payloadInjectionDate&quot;).concat(&quot;,&quot;).concat(vars.get(&quot;payloadInjectionTime&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;testScenarioNumber&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;payloadFilePath&quot;)).concat(&quot;,&quot;).concat(vars.get(&quot;jsonResultsFileName&quot;)).concat(&quot;,&quot;).concat(testResult).concat(&quot;,&quot;).concat(reasonForFailure);
+	if (debug) log.info(resultToBeStored);
+	f = new FileOutputStream(vars.get(&quot;apiResultsFileName&quot;),true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(resultToBeStored);
+	f.close();
+	
+	if (debug) log.info(&quot;Validate individual elements in JSON with that of the expected results - beanshell ends&quot;); 
+} catch (Exception e) {
+	String errorCode=&quot;2200&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), true);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode+&quot;;&quot;+e.toString());
+	f.close();
+}</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Tidy-up workbench before taking up the next API" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">//Tidy-up=&gt;Move the payload tracker file to the timestamped workbench folder
+import java.io.File;
+import java.io.IOException;
+import java.lang.*;
+try {
+	Boolean debug;
+	if (vars.get(&quot;overallDebug&quot;).equals(&quot;1&quot;)) debug=true; else debug=false;
+	if (debug) log.info(&quot;Tidy-up workbench before taking up the next API - beanshell starts&quot;);
+	String newLocation = vars.get(&quot;timeStampedJSONWorkbenchResultsValidationPath&quot;).concat(&quot;JsonPayloadTracker_&quot;).concat(vars.get(&quot;apiName&quot;)).concat(&quot;_&quot;).concat(vars.get(&quot;timeStampedFolderName&quot;)).concat(&quot;.csv&quot;);
+	new File(vars.get(&quot;payloadTrackingFile&quot;)).renameTo(new File(newLocation));
+	
+	if (debug) log.info(&quot;Tidy-up workbench before taking up the next API - beanshell ends&quot;);
+
+} catch (Exception e) {
+	String errorCode=&quot;2300&quot;;
+	f = new FileOutputStream(vars.get(&quot;errorsFileName&quot;), false);
+	p = new PrintStream(f); 
+	this.interpreter.setOut(p); 
+	print(&quot;Error code: &quot;+errorCode);
+	f.close();
+}</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While there are scenarios to be validated in each API" enabled="false">
+              <stringProp name="WhileController.condition">${scenarioValidationCondition}</stringProp>
+            </WhileController>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">{&quot;cappingCriteria.method&quot;:&quot;ORB&quot;,&quot;arrearDaysCalculationFrom&quot;:&quot;DAFWIA&quot;,&quot;loanProductMatrix[0].periodTerm.term&quot;:&quot;YEARS&quot;,&quot;loanProductMatrix[1].interestRepricingMethod&quot;:&quot;ANIVRSRY&quot;,&quot;closeDormantAccountAfter&quot;:10,&quot;loanProductMatrix[1].interestRepricing.value&quot;:2,&quot;loanProductMatrix[0].interestRepricing.term&quot;:&quot;MONTHS&quot;,&quot;productName&quot;:&quot;TCM_PROD_1014&quot;,&quot;markInstallmentsAsPaid&quot;:&quot;PEIP&quot;,&quot;topupCriteria.maxNumOfTopupInTenor&quot;:10,&quot;repaymentScheduleEditAmount&quot;:true,&quot;repaymentScheduleEditInstallments&quot;:false,&quot;interestRoundOff.roundOffTo&quot;:&quot;LOWEST&quot;,&quot;prepaymentCriteria.prepaymentRecalculationMethod&quot;:&quot;TENOR&quot;,&quot;loanProductMatrix[0].outstandingInterestRepaymentMethod&quot;:&quot;CPT&quot;,&quot;id&quot;:46,&quot;principalRange.minimum&quot;:1000,&quot;topupCriteria.topupPercent.maximum&quot;:50,&quot;loanProductMatrix[1].outstandingInterestRepaymentMethod&quot;:&quot;CPT&quot;,&quot;principalRange.defaultValue&quot;:1000,&quot;loanProductMatrix[1].interestRepay.value&quot;:5,&quot;productId&quot;:&quot;PROD_1014&quot;,&quot;availableTo&quot;:&quot;INDIVDL&quot;,&quot;loanProductMatrix[0].periodNum&quot;:1,&quot;interestSpreadRange.minimum&quot;:2.4,&quot;periodRange.term&quot;:&quot;MONTHS&quot;,&quot;cappingCriteria.constraint&quot;:&quot;SOFTCAP&quot;,&quot;irrRange.minimum&quot;:2.4,&quot;gracePeriod&quot;:&quot;NGP&quot;,&quot;accountNumberPattern.suffix&quot;:&quot;2&quot;,&quot;periodRange.minimum&quot;:1,&quot;repaymentDateMethod&quot;:&quot;ANIVRSRY&quot;,&quot;creditArrangement&quot;:&quot;REQUIRED&quot;,&quot;loanProductMatrix[0].principalRepay.term&quot;:&quot;MONTHS&quot;,&quot;prepaymentCriteria.limitingPrepaymentInYear&quot;:&quot;CALENDAR&quot;,&quot;createdOn&quot;:&quot;2018-10-27T06:40:09.649Z&quot;,&quot;enabled&quot;:true,&quot;penalInterestPercent&quot;:10,&quot;trancheEnabled&quot;:true,&quot;enableCollateral&quot;:true,&quot;topupCriteria.topupAmount.minimum&quot;:10000,&quot;interestRoundOff.unit&quot;:10,&quot;principalRange.maximum&quot;:3000,&quot;interestCalculationPercentPer&quot;:&quot;MONTHS&quot;,&quot;topupCriteria.topupAmount.maximum&quot;:20000,&quot;loanProductMatrix[1].principalRepay.term&quot;:&quot;MONTHS&quot;,&quot;lockArrearAccountAfter&quot;:10,&quot;maxNumOfDisbursements&quot;:2,&quot;loanProductMatrix[0].compoundingFrequency.value&quot;:2,&quot;loanProductMatrix[0].interestRateType&quot;:&quot;FLOATING&quot;,&quot;periodRange.maximum&quot;:5,&quot;loanProductMatrix[0].principalRepay.value&quot;:6,&quot;loanProductMatrix[1].periodTerm.value&quot;:4,&quot;lastModifiedOn&quot;:&quot;2018-10-27T06:40:09.649Z&quot;,&quot;daysInMonth&quot;:&quot;DAYS_30&quot;,&quot;penalGracePeriod&quot;:10,&quot;prepaymentCriteria.applyInterestOnPrepayment&quot;:&quot;MANUAL&quot;,&quot;loanProductMatrix[0].interestRepay.value&quot;:5,&quot;accountNumberPattern.prefix&quot;:&quot;1&quot;,&quot;daysInYear&quot;:&quot;DAYS_360&quot;,&quot;penalCalculationMethod&quot;:&quot;OPPL&quot;,&quot;currencyCode&quot;:&quot;EUR&quot;,&quot;loanProductMatrix[0].interestKey&quot;:&quot;LIBOR1&quot;,&quot;nonWorkingDaysRescheduling&quot;:&quot;NWD&quot;,&quot;interestRateRange.defaultValue&quot;:0.2,&quot;loanProductMatrix[0].interestRateDefault&quot;:5,&quot;prepaymentCriteria.minimumNoticePeriodForPrepayment&quot;:3,&quot;loanProductMatrix[1].interestRateDefault&quot;:5,&quot;segment&quot;:&quot;PIF&quot;,&quot;repaymentScheduleEditDate&quot;:false,&quot;loanProductMatrix[1].interestRateType&quot;:&quot;FLOATING&quot;,&quot;allowPrepayment&quot;:true,&quot;loanProductMatrix[1].periodNum&quot;:2,&quot;sector&quot;:&quot;REA&quot;,&quot;enableGuarantor&quot;:true,&quot;isAgeCriteria&quot;:true,&quot;topupEnabled&quot;:true,&quot;interestRateRange.maximum&quot;:0.3,&quot;loanProductMatrix[1].periodTerm.term&quot;:&quot;YEARS&quot;,&quot;irrRange.maximum&quot;:2.5,&quot;loanProductMatrix[1].compoundingFrequency.value&quot;:2,&quot;interestRateRange.minimum&quot;:0.1,&quot;activationDate.startDate&quot;:&quot;2018-01-10&quot;,&quot;interestSpreadRange.maximum&quot;:2.5,&quot;cappingEnabled&quot;:true,&quot;loanProductMatrix[0].interestRepay.term&quot;:&quot;YEARS&quot;,&quot;allowCoborrower&quot;:true,&quot;description&quot;:&quot;DESC_PROD_1014&quot;,&quot;topupCriteria.topupPercent.minimum&quot;:10,&quot;installmentRange.maximum&quot;:17,&quot;loanProductMatrix[1].interestRepricing.term&quot;:&quot;MONTHS&quot;,&quot;loanProductMatrix[0].interestRepricing.value&quot;:2,&quot;loanProductMatrix[0].interestRepricingMethod&quot;:&quot;ANIVRSRY&quot;,&quot;installmentRoundOff.unit&quot;:1,&quot;interestPostingFrequency&quot;:&quot;ODT&quot;,&quot;loanProductMatrix[0].periodTerm.value&quot;:4,&quot;installmentRange.minimum&quot;:12,&quot;paymentAllocationMethod&quot;:&quot;HORZNTL&quot;,&quot;tolerancePeriodNonWorkingMethod&quot;:&quot;EXNWD&quot;,&quot;productType&quot;:&quot;DTL&quot;,&quot;arrearToleranceDays&quot;:10,&quot;loanProductMatrix[1].compoundingFrequency.term&quot;:&quot;MONTHS&quot;,&quot;cappingCriteria.percentage&quot;:10,&quot;loanProductMatrix[1].interestKey&quot;:&quot;LIBOR1&quot;,&quot;loanProductMatrix[1].principalRepay.value&quot;:6,&quot;accountingType&quot;:&quot;CASH&quot;,&quot;lastModifiedBy&quot;:&quot;operator&quot;,&quot;lockArrearAccountAfterEnabled&quot;:true,&quot;activationDate.endDate&quot;:&quot;2018-07-11&quot;,&quot;installmentRoundOff.roundOffTo&quot;:&quot;NEAREST&quot;,&quot;minDaysBetweenDisbursalRepayment&quot;:34,&quot;repaymentAllocationOrder&quot;:&quot;PENALTY|FEES|INTEREST|PRNCIPAL&quot;,&quot;loanProductMatrix[0].compoundingFrequency.term&quot;:&quot;MONTHS&quot;,&quot;closeDormantAccountAfterEnabled&quot;:true,&quot;interestCalculationMethod&quot;:&quot;FLAT&quot;,&quot;prepaymentCriteria.partialPrepaymentBeforeIpd&quot;:&quot;OUPIO&quot;,&quot;createdBy&quot;:&quot;operator&quot;,&quot;ageCriteria.maximum&quot;:60,&quot;minDisbursementAmountLimit&quot;:43,&quot;ageCriteria.minimum&quot;:21,&quot;roundOffScheduleAdjustment&quot;:&quot;FIRST&quot;,&quot;loanProductMatrix[1].interestRepay.term&quot;:&quot;YEARS&quot;,&quot;loanProductMatrix[0].calculationMethod&quot;:&quot;EMI&quot;,&quot;accountNumberPattern.number&quot;:10,&quot;loanProductMatrix[1].calculationMethod&quot;:&quot;EMI&quot;}</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">{&quot;cappingCriteria.method&quot;:&quot;ORB&quot;,&quot;arrearDaysCalculationFrom&quot;:&quot;DAFWIA&quot;,&quot;loanProductMatrix[0].periodTerm.term&quot;:&quot;YEARS&quot;,&quot;loanProductMatrix[1].interestRepricingMethod&quot;:&quot;ANIVRSRY&quot;,&quot;closeDormantAccountAfter&quot;:10,&quot;loanProductMatrix[1].interestRepricing.value&quot;:2,&quot;loanProductMatrix[0].interestRepricing.term&quot;:&quot;MONTHS&quot;,&quot;productName&quot;:&quot;TCM_PROD_1014&quot;,&quot;topupCriteria.maxNumOfTopupInTenor&quot;:10,&quot;markInstallmentsAsPaid&quot;:&quot;PEIP&quot;,&quot;repaymentScheduleEditAmount&quot;:true,&quot;repaymentScheduleEditInstallments&quot;:false,&quot;interestRoundOff.roundOffTo&quot;:&quot;LOWEST&quot;,&quot;prepaymentCriteria.prepaymentRecalculationMethod&quot;:&quot;TENOR&quot;,&quot;loanProductMatrix[0].outstandingInterestRepaymentMethod&quot;:&quot;CPT&quot;,&quot;principalRange.minimum&quot;:1000,&quot;id&quot;:46,&quot;topupCriteria.topupPercent.maximum&quot;:50,&quot;loanProductMatrix[1].outstandingInterestRepaymentMethod&quot;:&quot;CPT&quot;,&quot;principalRange.defaultValue&quot;:1000,&quot;loanProductMatrix[1].interestRepay.value&quot;:5,&quot;productId&quot;:&quot;PROD_1014&quot;,&quot;availableTo&quot;:&quot;INDIVDL&quot;,&quot;loanProductMatrix[0].periodNum&quot;:1,&quot;interestSpreadRange.minimum&quot;:2.4,&quot;periodRange.term&quot;:&quot;MONTHS&quot;,&quot;cappingCriteria.constraint&quot;:&quot;SOFTCAP&quot;,&quot;irrRange.minimum&quot;:2.4,&quot;gracePeriod&quot;:&quot;NGP&quot;,&quot;accountNumberPattern.suffix&quot;:2,&quot;periodRange.minimum&quot;:1,&quot;repaymentDateMethod&quot;:&quot;ANIVRSRY&quot;,&quot;creditArrangement&quot;:&quot;REQUIRED&quot;,&quot;loanProductMatrix[0].principalRepay.term&quot;:&quot;MONTHS&quot;,&quot;prepaymentCriteria.limitingPrepaymentInYear&quot;:&quot;CALENDAR&quot;,&quot;createdOn&quot;:&quot;2018-10-27T06:40:09.649Z&quot;,&quot;enabled&quot;:true,&quot;penalInterestPercent&quot;:10,&quot;trancheEnabled&quot;:true,&quot;enableCollateral&quot;:true,&quot;topupCriteria.topupAmount.minimum&quot;:10000,&quot;interestRoundOff.unit&quot;:10,&quot;principalRange.maximum&quot;:3000,&quot;interestCalculationPercentPer&quot;:&quot;MONTHS&quot;,&quot;topupCriteria.topupAmount.maximum&quot;:20000,&quot;loanProductMatrix[1].principalRepay.term&quot;:&quot;MONTHS&quot;,&quot;lockArrearAccountAfter&quot;:10,&quot;maxNumOfDisbursements&quot;:2,&quot;loanProductMatrix[0].compoundingFrequency.value&quot;:2,&quot;loanProductMatrix[0].interestRateType&quot;:&quot;FLOATING&quot;,&quot;loanProductMatrix[0].principalRepay.value&quot;:6,&quot;periodRange.maximum&quot;:5,&quot;loanProductMatrix[1].periodTerm.value&quot;:4,&quot;lastModifiedOn&quot;:&quot;2018-10-27T06:40:09.649Z&quot;,&quot;daysInMonth&quot;:&quot;DAYS_30&quot;,&quot;penalGracePeriod&quot;:10,&quot;prepaymentCriteria.applyInterestOnPrepayment&quot;:&quot;MANUAL&quot;,&quot;loanProductMatrix[0].interestRepay.value&quot;:5,&quot;accountNumberPattern.prefix&quot;:1,&quot;daysInYear&quot;:&quot;DAYS_360&quot;,&quot;penalCalculationMethod&quot;:&quot;OPPL&quot;,&quot;currencyCode&quot;:&quot;EUR&quot;,&quot;loanProductMatrix[0].interestKey&quot;:&quot;LIBOR1&quot;,&quot;nonWorkingDaysRescheduling&quot;:&quot;NWD&quot;,&quot;interestRateRange.defaultValue&quot;:0.2,&quot;loanProductMatrix[0].interestRateDefault&quot;:5,&quot;prepaymentCriteria.minimumNoticePeriodForPrepayment&quot;:3,&quot;loanProductMatrix[1].interestRateDefault&quot;:5,&quot;segment&quot;:&quot;PIF&quot;,&quot;repaymentScheduleEditDate&quot;:false,&quot;loanProductMatrix[1].interestRateType&quot;:&quot;FLOATING&quot;,&quot;allowPrepayment&quot;:true,&quot;loanProductMatrix[1].periodNum&quot;:2,&quot;sector&quot;:&quot;REA&quot;,&quot;enableGuarantor&quot;:true,&quot;isAgeCriteria&quot;:true,&quot;topupEnabled&quot;:true,&quot;interestRateRange.maximum&quot;:0.3,&quot;loanProductMatrix[1].periodTerm.term&quot;:&quot;YEARS&quot;,&quot;irrRange.maximum&quot;:2.5,&quot;loanProductMatrix[1].compoundingFrequency.value&quot;:2,&quot;interestRateRange.minimum&quot;:0.1,&quot;activationDate.startDate&quot;:&quot;2018-01-10&quot;,&quot;cappingEnabled&quot;:true,&quot;interestSpreadRange.maximum&quot;:2.5,&quot;loanProductMatrix[0].interestRepay.term&quot;:&quot;YEARS&quot;,&quot;allowCoborrower&quot;:true,&quot;description&quot;:&quot;DESC_PROD_1014&quot;,&quot;topupCriteria.topupPercent.minimum&quot;:10,&quot;installmentRange.maximum&quot;:17,&quot;loanProductMatrix[1].interestRepricing.term&quot;:&quot;MONTHS&quot;,&quot;loanProductMatrix[0].interestRepricing.value&quot;:2,&quot;loanProductMatrix[0].interestRepricingMethod&quot;:&quot;ANIVRSRY&quot;,&quot;installmentRoundOff.unit&quot;:1,&quot;interestPostingFrequency&quot;:&quot;ODT&quot;,&quot;loanProductMatrix[0].periodTerm.value&quot;:4,&quot;installmentRange.minimum&quot;:12,&quot;paymentAllocationMethod&quot;:&quot;HORZNTL&quot;,&quot;tolerancePeriodNonWorkingMethod&quot;:&quot;EXNWD&quot;,&quot;productType&quot;:&quot;DTL&quot;,&quot;arrearToleranceDays&quot;:10,&quot;loanProductMatrix[1].compoundingFrequency.term&quot;:&quot;MONTHS&quot;,&quot;cappingCriteria.percentage&quot;:10,&quot;loanProductMatrix[1].interestKey&quot;:&quot;LIBOR1&quot;,&quot;loanProductMatrix[1].principalRepay.value&quot;:6,&quot;accountingType&quot;:&quot;CASH&quot;,&quot;lastModifiedBy&quot;:&quot;operator&quot;,&quot;lockArrearAccountAfterEnabled&quot;:true,&quot;activationDate.endDate&quot;:&quot;2018-07-11&quot;,&quot;installmentRoundOff.roundOffTo&quot;:&quot;NEAREST&quot;,&quot;minDaysBetweenDisbursalRepayment&quot;:34,&quot;repaymentAllocationOrder&quot;:&quot;PENALTY|FEES|INTEREST|PRNCIPAL&quot;,&quot;loanProductMatrix[0].compoundingFrequency.term&quot;:&quot;MONTHS&quot;,&quot;closeDormantAccountAfterEnabled&quot;:true,&quot;interestCalculationMethod&quot;:&quot;FLAT&quot;,&quot;prepaymentCriteria.partialPrepaymentBeforeIpd&quot;:&quot;OUPIO&quot;,&quot;createdBy&quot;:&quot;operator&quot;,&quot;ageCriteria.maximum&quot;:60,&quot;minDisbursementAmountLimit&quot;:43,&quot;ageCriteria.minimum&quot;:21,&quot;loanProductMatrix[1].interestRepay.term&quot;:&quot;YEARS&quot;,&quot;roundOffScheduleAdjustment&quot;:&quot;FIRST&quot;,&quot;loanProductMatrix[0].calculationMethod&quot;:&quot;EMI&quot;,&quot;loanProductMatrix[1].calculationMethod&quot;:&quot;EMI&quot;,&quot;accountNumberPattern.number&quot;:10}</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import com.github.wnameless.json.flattener.JsonFlattener;
+				String jsonStringActualResults = prev.getResponseMessage();
+				log.info(jsonStringActualResults);
+				Boolean debug=true;
+				String testResult=&quot;&quot;;
+				String reasonForFailure=&quot;&quot;;
+				String expectedResultsModified = prev.getResponseDataAsString();
+				log.info(expectedResultsModified);
+				Map flattenedJsonMapActualResults = JsonFlattener.flattenAsMap(jsonStringActualResults);
+				Map flattenedJsonMapExpectedResults = JsonFlattener.flattenAsMap(expectedResultsModified);
+				JSONObject flatteneddActualResults = new JSONObject(flattenedJsonMapActualResults.toString());
+				JSONObject flatteneddExpectedResults = new JSONObject(flattenedJsonMapExpectedResults.toString());
+				if (debug) log.info(&quot;Expected Results&quot;);
+			 	if (debug) log.info(flatteneddExpectedResults.toString());
+				if (debug) log.info(&quot;Actual Results&quot;);
+				if (debug) log.info(flatteneddActualResults.toString());
+				Iterator newKeys = flatteneddExpectedResults.keys();
+				while (newKeys.hasNext()) {
+					String newKey = newKeys.next();
+					if (flatteneddActualResults.has(newKey)) {
+						Object expectedResultObject= flatteneddExpectedResults.get(newKey);
+						Object actualResultObject = flatteneddActualResults.get(newKey);
+						if (expectedResultObject instanceof String) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a String and its value is &quot;+String.valueOf(expectedResultObject)); 
+							if (debug) log.info(&quot;Actual =&gt;&quot; +newKey+&quot; is a String and its value is &quot;+String.valueOf(actualResultObject)); 
+							if (String.valueOf(actualResultObject).equals(&quot;null&quot;)) {
+								actualResultObject=&quot;&quot;;
+							}
+							if (String.valueOf(expectedResultObject).equals(String.valueOf(actualResultObject))) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} else if (expectedResultObject instanceof Integer) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Integer and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Integer and its value is &quot;+String.valueOf(actualResultObject));			
+							double expected = (double) Integer.parseInt(String.valueOf(expectedResultObject));
+							double actual = (double) Integer.parseInt(String.valueOf(actualResultObject));
+							if (Double.compare(expected,actual) == 0) {
+							//if (String.valueOf(expectedResultObject).equals(String.valueOf(actualResultObject))) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} else if (expectedResultObject instanceof Double) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Double and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Double and its value is &quot;+String.valueOf(actualResultObject));			
+							if (Double.compare(expectedResultObject,actualResultObject) == 0) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+					
+						} else if (expectedResultObject instanceof Boolean) {
+							if (debug) log.info(&quot;Expected -&gt;&quot;+newKey+&quot; is a Boolean and its value is &quot;+String.valueOf(expectedResultObject));	
+							if (debug) log.info(&quot;Actual =&gt;&quot;+newKey+&quot; is a Boolean and its value is &quot;+String.valueOf(actualResultObject));			
+					
+							if (expectedResultObject==actualResultObject) {
+								if (debug) log.info(&quot;Pass&quot;);
+								testResult=&quot;PASS&quot;;
+							} else {
+								testResult=&quot;FAIL&quot;;
+								if (debug) log.info(&quot;fail&quot;);
+							}
+						} 
+						if (testResult.equals(&quot;FAIL&quot;)) {
+							reasonForFailure = reasonForFailure.concat(&quot;|&quot;).concat(&quot;Expected value for &quot;).concat(newKey).concat(&quot; is &quot;).concat(String.valueOf(expectedResultObject)).concat(&quot; and actual value is &quot;).concat(String.valueOf(actualResultObject));
+							if (debug) log.info(&quot;Reason For Failure: &quot;+reasonForFailure);
+							//break;
+						}
+					} else {
+						testResult = &quot;FAIL&quot;;
+						reasonForFailure = reasonForFailure.concat(&quot;|&quot;).concat(newKey).concat(&quot; not present in the results JSON Object&quot;);
+						//break;
+					}
+				}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;grant_type&quot;: &quot;password&quot;,&#xd;
+  &quot;username&quot;: &quot;operator&quot;,&#xd;
+  &quot;password&quot;: &quot;aW5pdDFAbDE=&quot;,&#xd;
+  &quot;refreshTokenParam&quot;: null&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">cbdoc.oaknorth.ai</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/identity/v1/token</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">bearerToken</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">bearerTokenNotFound</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Tenant-Identifier</stringProp>
+                <stringProp name="Header.value">playground</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="false">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">{
+&quot;tokenType&quot;:&quot;bearer&quot;,
+&quot;accessToken&quot;:&quot;Bearer ddsa asd ad0ada0d9 a0d9as0 9d0s9 0as9d sa09das0d 9ad0a9 0as9d as0d9 0d9sa 0a9ds0 9as0d &quot;
+}</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">bearerToken</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">bearerTokenNotFound</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">System.out.println(vars.get(&quot;bearerToken&quot;));</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Tasks" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">cbdoc.oaknorth.ai</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/office/v1/tasks?pageIndex=0&amp;size=200</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${bearerToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://cbdoc.oaknorth.ai/</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">User</stringProp>
+                <stringProp name="Header.value">operator</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">UUID</stringProp>
+                <stringProp name="Header.value">dfc7892a-5b6d-898d-b393-599f64a3358c</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Tenant-Identifier</stringProp>
+                <stringProp name="Header.value">playground</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

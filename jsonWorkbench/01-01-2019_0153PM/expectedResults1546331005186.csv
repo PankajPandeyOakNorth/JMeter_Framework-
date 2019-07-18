@@ -1,0 +1,6 @@
+expectedResponseCode,type,identifier,name,description,parentLedgerIdentifier,currency,subLedgers/0/type,subLedgers/0/identifier,subLedgers/0/name,subLedgers/0/description,subLedgers/0/parentLedgerIdentifier,subLedgers/0/currency,subLedgers/0/subLedgers,subLedgers/0/totalValue,subLedgers/0/showAccountsInChart,subLedgers/1/type,subLedgers/1/identifier,subLedgers/1/name,subLedgers/1/description,subLedgers/1/parentLedgerIdentifier,subLedgers/1/currency,subLedgers/1/subLedgers,subLedgers/1/totalValue,subLedgers/1/showAccountsInChart,totalValue,showAccountsInChart
+200,LIABILITY,Auto1,Tax,Ledger1,,USD,LIABILITY,SubAuto1,Tax,SubLedger1,Auto1,USD,,0,TRUE,LIABILITY,SubchildAuto1,Tax,SubchildLedger1,Auto1,USD,,0,TRUE,0,TRUE
+200,EQUITY,Auto2,Tax,Ledger1,,USD,EQUITY,SubAuto2,Tax,SubLedger2,Auto2,USD,,0,TRUE,EQUITY,SubchildAuto2,Tax,SubchildLedger2,Auto2,USD,,0,TRUE,0,TRUE
+200,REVENUE,Auto3,Tax,Ledger1,,USD,REVENUE,SubAuto3,Tax,SubLedger3,Auto3,USD,,0,TRUE,,,,,,,,,,,TRUE
+200,EXPENSE,Auto4,Tax,Ledger1,,USD,EXPENSE,SubAuto4,Tax,SubLedger4,Auto4,USD,,0,TRUE,,,,,,,,,,,TRUE
+200,ASSET,Auto5,Tax,Ledger1,,USD,ASSET,SubAuto5,Tax,SubLedger5,Auto5,USD,,0,TRUE,,,,,,,,,,,TRUE

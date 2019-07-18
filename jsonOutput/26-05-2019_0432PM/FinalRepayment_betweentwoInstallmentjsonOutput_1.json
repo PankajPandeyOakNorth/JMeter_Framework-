@@ -1,0 +1,1 @@
+{"timestamp":"2019-05-26T11:03:32.008","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["400"],"arguments":["Account with loan id 4,142 doesnt exist."],"defaultMessage":"Account with loan id 4,142 doesnt exist."}],"path":"/transaction/repayment/advance"}

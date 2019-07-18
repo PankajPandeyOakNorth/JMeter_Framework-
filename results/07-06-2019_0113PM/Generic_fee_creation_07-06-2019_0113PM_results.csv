@@ -1,0 +1,8 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+07-06-2019,0113PM,Generic_fee_creation,1,C:\ACorn\jsonPayload\07-06-2019_0113PM\testScenario_for_API__Generic_fee_creation1.json,C:\ACorn\jsonOutput\07-06-2019_0113PM\Generic_fee_creationjsonOutput_1.json,PASS,
+07-06-2019,0113PM,Generic_fee_creation,2,C:\ACorn\jsonPayload\07-06-2019_0113PM\testScenario_for_API__Generic_fee_creation2.json,C:\ACorn\jsonOutput\07-06-2019_0113PM\Generic_fee_creationjsonOutput_2.json,PASS,
+07-06-2019,0113PM,Generic_fee_creation,3,C:\ACorn\jsonPayload\07-06-2019_0113PM\testScenario_for_API__Generic_fee_creation3.json,C:\ACorn\jsonOutput\07-06-2019_0113PM\Generic_fee_creationjsonOutput_3.json,PASS,
+07-06-2019,0113PM,Generic_fee_creation,4,C:\ACorn\jsonPayload\07-06-2019_0113PM\testScenario_for_API__Generic_fee_creation4.json,C:\ACorn\jsonOutput\07-06-2019_0113PM\Generic_fee_creationjsonOutput_4.json,PASS,
+07-06-2019,0113PM,Generic_fee_creation,5,C:\ACorn\jsonPayload\07-06-2019_0113PM\testScenario_for_API__Generic_fee_creation5.json,C:\ACorn\jsonOutput\07-06-2019_0113PM\Generic_fee_creationjsonOutput_5.json,PASS,
+07-06-2019,0113PM,Generic_fee_creation,6,C:\ACorn\jsonPayload\07-06-2019_0113PM\testScenario_for_API__Generic_fee_creation6.json,C:\ACorn\jsonOutput\07-06-2019_0113PM\Generic_fee_creationjsonOutput_6.json,PASS,
+07-06-2019,0113PM,Generic_fee_creation,7,C:\ACorn\jsonPayload\07-06-2019_0113PM\testScenario_for_API__Generic_fee_creation7.json,C:\ACorn\jsonOutput\07-06-2019_0113PM\Generic_fee_creationjsonOutput_7.json,PASS,

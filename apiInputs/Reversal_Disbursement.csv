@@ -1,0 +1,16 @@
+testScenarioNumber,testObjective,urlParameter,loanId,externalId,channel,version,notes,paymentDetail,disbursementDate,repaymentDateMethod,firstRepaymentDate,disbursementAmount,expectedResponseCode
+,,NA,3956,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3957,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3958,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3959,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3960,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3961,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3962,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3969,null,null,1,null,null,2018-09-05,SPD,2018-09-07,10000000,202
+,,NA,3970,null,null,1,null,null,2018-09-05,SPD,2018-09-07,10000000,202
+,,NA,3968,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3955,null,null,1,null,null,2018-09-05,ANIVRSRY,null,10000000,202
+,,NA,3963,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3964,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3965,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3966,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202

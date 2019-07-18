@@ -1,0 +1,43 @@
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!doctype html>
+
+<html>
+
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta charset="utf-8">
+  <title>ONAI-CORE BANKING</title>
+  <base href="/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <fims-app>
+    <div style="padding: 20%;text-align:center;">
+      LOADING ONAI......
+    </div>
+  </fims-app>
+<script type="text/javascript" src="inline.8bd65c817de7707152ff.bundle.js"></script><script type="text/javascript" src="polyfills.de5b50497bee56ddeeda.bundle.js"></script><script type="text/javascript" src="styles.14063f8ad08469d16aa4.bundle.js"></script><script type="text/javascript" src="scripts.c540df64897f9155019d.bundle.js"></script><script type="text/javascript" src="vendor.c1e9d4494b36d113109a.bundle.js"></script><script type="text/javascript" src="main.95dda29b098deca0d745.bundle.js"></script></body>
+
+</html>
+

@@ -1,0 +1,7 @@
+0,LoanId,34,,,,
+1,Action,Periodic,Periodic,Adhoc,Adhoc,
+1,Date,IPD,SPD,IPD,Valuedate,
+2,Event,Disb,Repayment,Prepayment,Rollup,
+3,CapitalixetoPrincipal,TRUE,,,,
+4,due,single,multipledue,,,
+5,calculatioMethod,Emi,IPP,IntrestRollup,INO,EPI

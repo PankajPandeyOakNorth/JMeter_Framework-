@@ -1,0 +1,9 @@
+FeeApplication Type,paymentDateMethod,DemandDate,DemandGenerated,Captilazid
+Periodic,IPD,FutureDate,Yes,TRUE
+Event,IPD,FutureDate,Yes,TRUE
+AdHoc,IPD,FutureDate,Yes,TRUE
+Periodic,SPD,FutureDate,Yes,TRUE
+Periodic,IPD,CurrentDate,Yes,TRUE
+Periodic,IPD,ValueDate,Yes,TRUE
+Periodic,IPD,FutureDate,No,TRUE
+Periodic,IPD,FutureDate,Yes,FALSE

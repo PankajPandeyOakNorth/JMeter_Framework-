@@ -1,0 +1,2 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+27-05-2019,0644PM,finalRepayment_partialpaid_nextdue3,1,C:\ACorn\jsonPayload\27-05-2019_0643PM\testScenario_for_API__finalRepayment_partialpaid_nextdue31.json,C:\ACorn\jsonOutput\27-05-2019_0643PM\finalRepayment_partialpaid_nextdue3jsonOutput_1.json,PASS,

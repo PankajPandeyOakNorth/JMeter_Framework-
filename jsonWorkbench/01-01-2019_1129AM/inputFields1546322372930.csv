@@ -1,0 +1,15 @@
+type,identifier,name,description,currency,showAccountsInChart
+LIABILITY,Auto1,Tax,Ledger1,USD,TRUE
+EQUITY,Auto2,Tax,Ledger1,USD,TRUE
+REVENUE,Auto3,Tax,Ledger1,USD,TRUE
+EXPENSE,Auto4,Tax,Ledger1,USD,TRUE
+ ASSET,Auto5,Tax,Ledger1,USD,TRUE
+ABC,Auto6,Tax,Ledger1,USD,TRUE
+LIABILITY,NULL,Tax,Ledger1,USD,TRUE
+LIABILITY,Auto7,NULL,Ledger1,USD,TRUE
+LIABILITY,Auto8,Tax,NULL,USD,TRUE
+LIABILITY,Auto9,Tax,Ledger1,BZD,TRUE
+LIABILITY,Auto10,Tax,Ledger1,NULL,TRUE
+LIABILITY,Auto11,Tax,Ledger1,ABC,TRUE
+LIABILITY,Auto12,Tax,Ledger1,USD,FALSE
+LIABILITY,Auto1,Tax,Ledger1,USD,TRUE

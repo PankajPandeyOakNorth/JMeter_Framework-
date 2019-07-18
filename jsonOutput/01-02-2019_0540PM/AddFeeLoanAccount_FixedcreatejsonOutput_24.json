@@ -1,0 +1,1 @@
+{"timestamp":1549023103286,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Reference amount is not allowed as Prepayment Date","path":"/portfolio/v1/loanaccount"}

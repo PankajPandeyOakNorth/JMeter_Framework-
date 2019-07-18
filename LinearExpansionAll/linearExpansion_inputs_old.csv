@@ -1,0 +1,6 @@
+0,type,LIABILITY,EQUITY,REVENUE,EXPENSE, ASSET,ABC
+0,identifier,Auto1,NULL,,,,
+0,name,Tax,NULL,,,,
+0,description,Ledger1,NULL,,,,
+0,currency,USD,BZD,NULL,ABC,,
+0,showAccountsInChart,TRUE,FALSE,,,,

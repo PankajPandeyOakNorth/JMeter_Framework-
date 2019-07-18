@@ -1,0 +1,1 @@
+{"timestamp":1549014445830,"status":500,"error":"Internal Server Error","exception":"java.lang.NullPointerException","message":"org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException","path":"/portfolio/v1/loanaccount"}

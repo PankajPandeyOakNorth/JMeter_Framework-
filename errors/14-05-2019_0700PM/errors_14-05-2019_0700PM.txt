@@ -1,0 +1,3 @@
+Error File Created
+Error code: 1300;java.lang.NullPointerException
+Error code: 1700;java.lang.NullPointerException: Attempt to invoke method equals on null value

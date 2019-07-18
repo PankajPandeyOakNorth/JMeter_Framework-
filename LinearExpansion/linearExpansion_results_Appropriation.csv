@@ -1,0 +1,38 @@
+loanId,AllocationOrder,paymentAllocationMethod,repaymentDate,finalRepayAmount,DaysCollection,
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,Less than feeF1,A/A,3753
+234,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,Less than feeF1,A/A,3754
+233,FIP,VERTCAL,PayingExactlyOn2ndInsatllment,Less than feeF1,A/A,3755
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,ExactFeeF1,A/A,3756
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,GreaterThanF1ButLessThantotalFees,A/A,3757
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,ExactAmountOfSumOfAllFees,A/A,3758
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,LessThanInterestI1,A/A,3759
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,ExactInterestI1,A/A,3760
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,GreaterThan i1 LessThan totalInterset,A/A,3761
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,TotalSumOfInterest,A/A,3762
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,LessThanPrincipalP1,A/A,3763
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,ExactAmountPrincipal P1,A/A,3764
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,GreterThanP1 LessThanTotalPrinc,A/A,3765
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,SumOfAllInterst,A/A,3766
+233,FIP,HORZNTL,PayingBetween 2nd and 3rd Installment,ExactAmountOfSumOfAllFees,A/A,3767
+233,FIP,HORZNTL,PayingBetween 2nd and 3rd Installment,TotalSumOfInterest,A/A,3768
+233,FIP,HORZNTL,PayingBetween 2nd and 3rd Installment,SumOfAllPrincipal,A/A,3769
+233,FIP,HORZNTL,1stInstallFullPaidExactlyonSaneDue_nextInstallPaidOn 3rd,ExactInterestI1,A/A,3770
+233,FIP,HORZNTL,1stInstallFullPaidExactlyonSaneDue_nextInstallPaidOn 3rd,GreterThanP1 LessThanP2,A/A,3771
+233,FIP,HORZNTL,1stInstallFullPaidExactlyonSaneDue_nextInstallPaidOn 3rd,SumOfAllPrincipal,A/A,3772
+233,FIP,HORZNTL,1stInstallFullPaidBetween1stand2nd_nextInstallPaidOn 3rd,GreaterThanF1ButLessThanF2,A/A,3773
+233,FIP,HORZNTL,1stInstallFullPaidBetween1stand2nd_nextInstallPaidOn 3rd,GreaterThan i1 LessThan I2,A/A,3774
+233,FIP,HORZNTL,1stInstallFullPaidBetween1stand2nd_nextInstallPaidOn 3rd,GreterThanP1 LessThanP2,A/A,3775
+233,FIP,HORZNTL,1st+2nd FullPaidOnDue_nextInstallPaid on 5th,ExactFeeF1,A/A,3776
+233,FIP,HORZNTL,1st+2nd FullPaidOnDue_nextInstallPaid on 5th,ExactInterestI1,A/A,3777
+233,FIP,HORZNTL,1st+2nd FullPaidOnDue_nextInstallPaid on 5th,ExactAmountPrincipal P1,A/A,3778
+233,FIP,HORZNTL,1st PartialPaidOndueDate_nextInstallPaidOn 3rd,ExactAmountOfSumOfAllFees,A/A,3779
+233,FIP,HORZNTL,1st partialpaid on late nextDue and remaining paid on next same due or late,TotalSumOfInterest,A/A,3780
+233,FIP,HORZNTL,1st PartialPaid on same due and remaining paid on 3rdinstall same due or late,SumOfAllPrincipal,A/A,3781
+233,FIP,HORZNTL,1st complete paid on same due and remaining paid on 3rdinstall same due or late,ExactAmountOfSumOfAllFees,A/A,3782
+233,FIP,HORZNTL,1st complete paid on Late and remaining paid on 3rdinstall same due or late,ExactAmountOfSumOfAllFees,A/A,3783
+233,FIP,HORZNTL,1st complete paid in multiple dates and remaining paid on 3rdinstall same due or late,ExactAmountOfSumOfAllFees,A/A,3784
+233,FIP,HORZNTL,Multiple payments with same value ddate,ExactAmountOfSumOfAllFees,A/A,3785
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,Less than feeF1,A/360,3786
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,Less than feeF1,30/360,3787
+233,FIP,HORZNTL,PayingExactlyOn2ndInsatllment,Less than feeF1,30/365,3788
+233,FIP,HORZNTL,PayingLateOn2ndInsatllment,Less than feeF1,30/365,3789

@@ -1,0 +1,2 @@
+disbursementDate,disbursementAmount,repaymentDateMethod,firstRepaymentDate,feeCollectionMethod,finalDisbursementAmount,actualCustomerPayout,loanTerminationDate,feeList/0/feeId,feeList/0/feeName,feeList/0/feeType,feeList/0/feeAccountMappingId,feeList/0/plannedAmount,feeList/0/actualAmount,feeList/0/remarks,loanId,version
+2019-03-06,9990000,SPD,2019-03-07,CAPITAL,9990000,9998000,,492,RepayCashColfee,HOLD,4302,2000,2000,null,4314,1

@@ -1,0 +1,1 @@
+{"timestamp":1546605202339,"status":409,"error":"Conflict","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Duplicate name: Test_PAM_12","path":"/portfolio/v1/products"}

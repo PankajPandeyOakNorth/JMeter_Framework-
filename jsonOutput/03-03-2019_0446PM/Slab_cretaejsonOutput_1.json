@@ -1,0 +1,1 @@
+{"data":null,"errorResponse":{"timestamp":"2019-03-03T11:17:21.129","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["400"],"arguments":["Fee application type is not editable"],"defaultMessage":"Fee application type is not editable"}],"path":"/loanaccount"}}

@@ -1,0 +1,10 @@
+testScenarioNumber,testObjective,urlParameter,identifier,feeAccountingType,holdType,description,feeApplicationType,feeFrequency,paymentMethod,feeEvent,feeCalculationMethod,feeGroup,expectedResponseCode
+,,NA,Feemod1,INCOME,null,INCOMETEST,EVENT,null,null,FDSBRMNT,FIXED,null,202
+,,NA,FeeMod2,EXPENSE,null,EXPENSETEST,EVENT,null,null,REPAYMNT,FIXED,null,202
+,,NA,Feemod9,PASTROUH,null,PassTest,EVENT,null,null,RESTRCTE,FIXED,ARNGMNTF,202
+,,NA,Feemod4,HOLD,RETINT,Retaintest,EVENT,null,null,TERMNATN,FIXED,INTRDCRF,202
+,,NA,Feemod5,HOLD,CASHCOL,CashTest,EVENT,null,null,REPAYMNT,FIXED,MNTRGF,202
+,,NA,Feemod6,INCOME,null,PeriodicTest,PERIODIC,1,IPD,null,FIXED,null,202
+,,NA,Feemod7,INCOME,null,Adhoctest,ADHOC,null,null,null,FIXED,EXTF,202
+,,NA,Feemod8,EXPENSE,null,Adhoctest,ADHOC,null,null,null,FIXED,null,202
+,,NA,Feemod9,PASTROUH,null,Adhoctest,ADHOC,null,null,null,FIXED,null,202

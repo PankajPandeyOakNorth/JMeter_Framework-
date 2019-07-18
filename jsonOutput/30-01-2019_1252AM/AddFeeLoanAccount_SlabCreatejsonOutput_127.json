@@ -1,0 +1,1 @@
+{"timestamp":1548790251394,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Reference amount must be null for Flat fee formula","path":"/portfolio/v1/loanaccount"}

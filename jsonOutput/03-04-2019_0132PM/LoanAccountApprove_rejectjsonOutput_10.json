@@ -1,0 +1,1 @@
+{"timestamp":1554278620518,"status":404,"error":"Not Found","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Associated loan account with identifier abc not found !","path":"/portfolio/v1/loanaccount/update/accountstatus/abc"}

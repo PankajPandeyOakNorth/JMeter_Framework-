@@ -1,0 +1,6 @@
+testScenarioNumber,testObjective,urlParameter,identifier,type,name,showAccountsInChart,description,currency,expectedResponseCode
+,,0_RepayAsset,RepaySubledger,ASSET,RepaySubledger,TRUE,Testing,INR,202
+,,0_RepayEquity,RepayEquSubledger,EQUITY,RepayEquSubledger,TRUE,Testing,INR,202
+,,0_RepayExpe,RepayExpSubledger,EXPENSE,RepayExpSubledger,TRUE,Testing,INR,202
+,,0_RepayLiability,RepayLibSubledger,LIABILITY,RepayLibSubledger,TRUE,Testing,INR,202
+,,0_RepayRevenue,RepayRevSubledger,REVENUE,RepayRevSubledger,TRUE,Testing,INR,202

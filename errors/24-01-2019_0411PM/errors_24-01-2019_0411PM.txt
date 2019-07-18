@@ -1,0 +1,5 @@
+Error File Created
+Error in module 2100:java.lang.ClassCastException: Cannot cast java.lang.String to int
+Error code: 2200;java.lang.NullPointerException: Attempt to invoke method equals on null value
+Error in module 2100:java.lang.ClassCastException: Cannot cast java.lang.String to int
+Error code: 2200;java.lang.NullPointerException: Attempt to invoke method equals on null value

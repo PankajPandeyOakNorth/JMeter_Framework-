@@ -1,0 +1,16 @@
+LoanId,LastRepaymentReversed,LastRepaymentReversed,FeeApplicationType,CapitalixetoPrincipal,Fees,LoansType,Undo,Redo
+34,Basic ,currendate,Periodic,TRUE,with fees,Emi,Yes,Yes
+34,Basic ,valuedate,Periodic,TRUE,with fees,Emi,Yes,Yes
+34,Advance ,currentdate,Periodic,TRUE,with fees,Emi,Yes,Yes
+34,Advance ,value date,Periodic,TRUE,with fees,Emi,Yes,Yes
+34,Prepayment,knockOffcurrentdate,Periodic,TRUE,with fees,Emi,Yes,Yes
+34,Prepayment,SchduleRegenertionvaluedate,Periodic,FALSE,with fees,Emi,Yes,Yes
+34,Basic ,currendate,Periodic,TRUE,with fees,Emi,Yes,Yes
+34,Basic ,currendate,Adhoc,TRUE,with fees,Emi,Yes,NO
+34,Basic ,currendate,Adhoc,FALSE,with fees,Emi,Yes,NO
+34,Basic ,currendate,Event,FALSE,with fees,Emi,Yes,NO
+34,Basic ,currendate,Periodic,TRUE,W/O Fees,Emi,Yes,Yes
+34,Basic ,currendate,Periodic,TRUE,with fees,Epi,Yes,Yes
+34,Basic ,currendate,Periodic,TRUE,with fees,IntrestRollup,Yes,Yes
+34,Basic ,currendate,Periodic,TRUE,with fees,IPP,Yes,Yes
+34,Basic ,currendate,Periodic,TRUE,with fees,ino,Yes,Yes

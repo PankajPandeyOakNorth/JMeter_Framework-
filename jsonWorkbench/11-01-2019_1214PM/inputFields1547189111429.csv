@@ -1,0 +1,11 @@
+type,identifier,name,description,currency,showAccountsInChart
+LIABILITY,SubAuto1,Tax,SubLedger1,USD,TRUE
+EQUITY,SubAuto2,Tax,SubLedger2,USD,TRUE
+REVENUE,SubAuto3,Tax,SubLedger3,USD,TRUE
+EXPENSE,SubAuto4,Tax,SubLedger4,USD,TRUE
+ASSET,SubAuto5,Tax,SubLedger5,USD,TRUE
+ASSET,SubAuto12,Tax,SubLedger1,USD,FALSE
+LIABILITY,SubchildAuto1,Tax,SubchildLedger1,USD,TRUE
+EQUITY,SubchildAuto2,Tax,SubchildLedger2,USD,TRUE
+LIABILITY,SubAuto1,Tax,DuplicateLedger1,USD,TRUE
+LIABILITY,SubchildAuto1,Tax,DupSubchildLedger1,USD,TRUE

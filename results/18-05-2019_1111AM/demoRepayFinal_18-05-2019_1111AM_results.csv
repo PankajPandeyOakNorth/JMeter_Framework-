@@ -1,0 +1,2 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+18-05-2019,1111AM,demoRepayFinal,1,C:\ACorn\jsonPayload\18-05-2019_1111AM\testScenario_for_API__demoRepayFinal1.json,C:\ACorn\jsonOutput\18-05-2019_1111AM\demoRepayFinaljsonOutput_1.json,FAIL,Actual response code received is 400

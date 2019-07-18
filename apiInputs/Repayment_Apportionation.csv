@@ -1,0 +1,45 @@
+testScenarioNumber,testObjective,urlParameter,loanId,repaymentDate,collectionMethod,cashCollateralUtilizationAmount,retainedInterestUtilizationAmount,customerRepayAmount,repaymentCurrency,version,expectedResponseCode
+,Less than feeF1,NA,31,2019-03-04,DFRMCSTM,null,null,50,INR,2,200
+,Less than feeF1,NA,32,2019-03-04,DFRMCSTM,null,null,80,INR,2,200
+,Less than feeF1,NA,33,2019-03-04,DFRMCSTM,null,null,100,INR,2,200
+,ExactFeeF1,NA,34,2019-03-04,DFRMCSTM,null,null,301,INR,2,200
+,GreaterThanF1ButLessThantotalFees,NA,35,2019-03-04,DFRMCSTM,null,null,889088.88,INR,2,200
+,ExactAmountOfSumOfAllFees,NA,36,2019-03-04,DFRMCSTM,null,null,889589.88,INR,2,200
+,LessThanInterestI1,NA,37,2019-03-04,DFRMCSTM,null,null,100601,INR,2,200
+,ExactInterestI1,NA,38,2019-03-04,DFRMCSTM,null,null,102618.81,INR,2,200
+,GreaterThan i1 LessThan totalInterset,NA,39,2019-03-04,DFRMCSTM,null,null,970089.07,INR,2,200
+,TotalSumOfInterest,NA,40,2019-03-04,DFRMCSTM,null,null,982344.67,INR,2,200
+,LessThanPrincipalP1,NA,41,2019-03-04,DFRMCSTM,null,null,809308.56,INR,2,200
+,ExactAmountPrincipal P1,NA,42,2019-03-04,DFRMCSTM,null,null,110352.14,INR,2,200
+,GreterThanP1 LessThanTotalPrinc,NA,43,2019-03-04,DFRMCSTM,null,null,210625.93,INR,2,200
+,TotalSumOfInterest,NA,44,2019-03-04,DFRMCSTM,null,null,194312.6,INR,2,200
+,ExactAmountOfSumOfAllFees,NA,45,2019-03-15,DFRMCSTM,null,null,888687.88,INR,2,200
+,TotalSumOfInterest,NA,46,2019-03-15,DFRMCSTM,null,null,980742.67,INR,2,200
+,SumOfAllPrincipal,NA,47,2019-03-15,DFRMCSTM,null,null,1784416.51,INR,2,200
+,ExactInterestI3,NA,48,2019-04-04,DFRMCSTM,null,null,982589.14,INR,3,200
+,GreterThanP1 LessThanP3,NA,49,2019-04-04,DFRMCSTM,null,null,1774398.27,INR,3,200
+,SumOfAllPrincipal,NA,50,2019-04-04,DFRMCSTM,null,null,1785366.63,INR,3,200
+,GreaterThanF2ButLessThanF3,NA,51,2019-04-04,DFRMCSTM,null,null,891482.46,INR,3,200
+,GreaterThan i2 LessThan I3,NA,52,2019-04-04,DFRMCSTM,null,null,968537.88,INR,3,200
+,GreterThanP2 LessThanP3,NA,53,2019-04-04,DFRMCSTM,null,null,1773401.92,INR,3,200
+,ExactFeeF3,NA,54,2019-05-07,DFRMCSTM,null,null,100,INR,4,200
+,ExactInterestI4,NA,55,2019-05-07,DFRMCSTM,null,null,974490.89,INR,4,200
+,ExactAmountPrincipal P5,NA,56,2019-05-07,DFRMCSTM,null,null,2689282.4,INR,4,200
+,ExactAmountOfSumOfAllFees,NA,57,2019-04-04,DFRMCSTM,null,null,1784366.51,INR,3,200
+,TotalSumOfInterest,NA,58,2019-04-04,DFRMCSTM,null,null,1799178.9,INR,3,200
+,SumOfAllPrincipal,NA,59,2019-04-04,DFRMCSTM,null,null,2587194,INR,3,200
+,ExactAmountOfFees F3,NA,60,2019-04-15,DFRMCSTM,null,null,888687.88,INR,3,200
+,ExactAmountOfP2,NA,61,2019-04-04,DFRMCSTM,null,null,891432.46,INR,3,200
+,ExactAmountOf I3,NA,62,2019-04-04,BNKTRASF,null,null,985433.72,INR,4,200
+,ExactAmountOf P1,NA,63,2019-04-04,DFRMCSTM,null,null,888587.88,INR,2,200
+,ExactAmountOf P2,NA,63,2019-04-15,DFRMCSTM,null,null,888587.88,INR,2,200
+,ExactAmountOf P3,NA,63,2019-04-25,DFRMCSTM,null,null,888587.88,INR,2,200
+,Less than feeF1,NA,64,2019-03-04,DFRMCSTM,null,null,70,INR,2,200
+,Exact P1 I1 and next month Fee,NA,65,2019-03-04,DFRMCSTM,null,null,888587.88,INR,2,200
+,Less than feeF1,NA,68,2019-03-04,DFRMREIN,0,1200,0,INR,2,200
+,Less than feeF1,NA,69,2019-03-15,DFRMCSCL,2200,0,0,INR,2,200
+,Less than feeF1,NA,66,2019-03-04,DFRMCSTM,null,null,892588,INR,2,200
+,ExactAmountOf P2,NA,67,2019-04-04,DFRMCSTM,null,null,888587.88,INR,2,200
+,ExactAmountOfFees F3inc Amort,NA,70,2019-03-04,DFRMCSTM,null,null,888587.88,INR,2,200
+,ExactAmountOfP2 per Amort,NA,71,2019-03-04,DFRMCSTM,null,null,888587.88,INR,2,200
+,ExactAmountOf I3 Passthrough,NA,72,2019-03-04,DFRMCSTM,null,null,888587.88,INR,2,200

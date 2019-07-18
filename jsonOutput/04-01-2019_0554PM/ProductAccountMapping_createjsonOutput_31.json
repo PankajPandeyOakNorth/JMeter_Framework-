@@ -1,0 +1,1 @@
+{"timestamp":1546604813226,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Invalid Account mapped for Interest Income Account, Account type should be REVENUE","path":"/portfolio/v1/products"}

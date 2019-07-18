@@ -1,0 +1,1 @@
+{"ledger":"SubAuto5","identifier":"Account5","signatureAuthorities":["Second To Sign","First To Sign"],"balance":0,"holders":["First Holder","Second Holder"],"name":"COUNT","expectedResponseCode":200,"state":"OPEN","type":"ASSET","allowManualJournalEntry":true}

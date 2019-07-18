@@ -1,0 +1,16 @@
+identifier,name,type,ledger,balance
+RevAccnt1,RevAccnt1,REVENUE,RepayRevSubledger,0
+RevAccnt2,RevAccnt2,REVENUE,RepayRevSubledger,0
+RevAccnt3,RevAccnt3,REVENUE,RepayRevSubledger,0
+LiabAccnt1,LiabAccnt1,LIABILITY,RepayLibSubledger,0
+LiabAccnt2,LiabAccnt2,LIABILITY,RepayLibSubledger,0
+LiabAccnt3,LiabAccnt3,LIABILITY,RepayLibSubledger,0
+ExpAccnt1,ExpAccnt1,EXPENSE,RepayExpSubledger,0
+ExpAccnt2,ExpAccnt2,EXPENSE,RepayExpSubledger,0
+ExpAccnt3,ExpAccnt3,EXPENSE,RepayExpSubledger,0
+EquAccnt1,EquAccnt1,EQUITY,RepayEquSubledger,0
+EquAccnt2,EquAccnt2,EQUITY,RepayEquSubledger,0
+AsseAccnt1,AsseAccnt1,ASSET,RepaySubledger,0
+AsseAccnt2,AsseAccnt2,ASSET,RepaySubledger,0
+AsseAccnt3,AsseAccnt3,ASSET,RepaySubledger,0
+AsseAccnt4,AsseAccnt4,ASSET,RepaySubledger,0

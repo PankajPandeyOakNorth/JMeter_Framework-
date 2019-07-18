@@ -1,0 +1,5 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+14-05-2019,0709PM,InterestRollUP_GET,7,,C:\ACorn\jsonOutput\14-05-2019_0709PM\InterestRollUP_GETjsonOutput_7.json,PASS,
+14-05-2019,0710PM,InterestRollUP_GET,23,,C:\ACorn\jsonOutput\14-05-2019_0709PM\InterestRollUP_GETjsonOutput_23.json,PASS,
+14-05-2019,0710PM,InterestRollUP_GET,24,,C:\ACorn\jsonOutput\14-05-2019_0709PM\InterestRollUP_GETjsonOutput_24.json,PASS,
+14-05-2019,0710PM,InterestRollUP_GET,25,,C:\ACorn\jsonOutput\14-05-2019_0709PM\InterestRollUP_GETjsonOutput_25.json,PASS,

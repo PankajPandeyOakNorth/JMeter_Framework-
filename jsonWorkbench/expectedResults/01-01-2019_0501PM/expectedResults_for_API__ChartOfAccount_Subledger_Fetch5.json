@@ -1,0 +1,1 @@
+{"identifier":"Auto5","subLedgers":[{"totalValue":0,"identifier":"SubAuto5","parentLedgerIdentifier":"Auto5","name":"Tax","description":"SubLedger5","currency":"USD","type":"ASSET","showAccountsInChart":true},{}],"name":"Tax","expectedResponseCode":200,"description":"Ledger1","currency":"USD","type":"ASSET","showAccountsInChart":true}

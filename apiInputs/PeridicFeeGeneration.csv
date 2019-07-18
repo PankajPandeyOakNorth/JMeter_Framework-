@@ -1,0 +1,16 @@
+testScenarioNumber,testObjective,urlParameter,expectedResponseCode
+,,48?curDate=2019-02-04,200
+,,49?curDate=2019-02-04,200
+,,50?curDate=2019-02-04,200
+,,51?curDate=2019-02-04,200
+,,52?curDate=2019-02-04,200
+,,53?curDate=2019-02-04,200
+,,54?curDate=2019-02-04,200
+,,55?curDate=2019-02-04,200
+,,56?curDate=2019-02-04,200
+,,57?curDate=2019-02-04,200
+,,58?curDate=2019-02-04,200
+,,59?curDate=2019-02-04,200
+,,60?curDate=2019-02-04,200
+,,61?curDate=2019-02-04,200
+,,62?curDate=2019-02-04,200

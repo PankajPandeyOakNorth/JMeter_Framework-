@@ -1,0 +1,1 @@
+{"timestamp":1555393526950,"status":500,"error":"Internal Server Error","exception":"org.apache.fineract.cn.lang.ServiceException","message":"something went wrong","path":"/portfolio/v1/transaction/eventEnquiry/4930"}

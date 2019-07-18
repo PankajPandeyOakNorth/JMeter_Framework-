@@ -1,0 +1,1 @@
+{"timestamp":1548788911689,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"From date should be after previous slab date","path":"/portfolio/v1/loanaccount"}

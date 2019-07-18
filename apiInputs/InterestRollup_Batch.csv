@@ -1,0 +1,17 @@
+testScenarioNumber,testObjective,urlParameter,expectedResponseCode
+,,3681?curDate=2019-01-04,202
+,,3682?curDate=2019-04-30,202
+,,3683?curDate=2019-03-15,202
+,,3684?curDate=2019-02-04,202
+,,3684?curDate=2019-04-04,202
+,,3685?curDate=2019-04-04,202
+,,3686?curDate=2019-03-04,202
+,,3687?curDate=2019-04-04,202
+,,3688?curDate=2019-05-06,202
+,,3689?curDate=2019-05-07,202
+,,3690?curDate=2019-02-07,202
+,,3691?curDate=2019-02-04,202
+,,3692?curDate=2019-02-04,202
+,,LOAN?curDate=2019-02-04,202
+,,LOANcurDate=2019-03-15,202
+,,LOAN?curDate=2019-04-04,202

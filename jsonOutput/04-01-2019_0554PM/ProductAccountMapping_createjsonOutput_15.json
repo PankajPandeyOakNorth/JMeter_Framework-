@@ -1,0 +1,1 @@
+{"timestamp":1546604768292,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Invalid Account mapped for Deposit Parking Account, Account type should be LIABILITY","path":"/portfolio/v1/products"}

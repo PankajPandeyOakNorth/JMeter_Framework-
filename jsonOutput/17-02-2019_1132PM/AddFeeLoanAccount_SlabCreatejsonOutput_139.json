@@ -1,0 +1,1 @@
+{"timestamp":1550426979124,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Slab reference code should not be prepayment date","path":"/portfolio/v1/loanaccount"}

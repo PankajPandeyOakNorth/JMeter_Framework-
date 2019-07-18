@@ -1,0 +1,10 @@
+0,type,LIABILITY,EQUITY,REVENUE,EXPENSE, ASSET
+0,identifier,Account1,NULL,,,
+0,name,COUNT,,,,
+0,allowManualJournalEntry,TRUE,FALSE,,,
+0,holders.0,First Holder,,,,
+0,holders.1,Second Holder,,,,
+0,signatureAuthorities.0,Second To Sign,,,,
+0,signatureAuthorities.1,First To Sign,,,,
+0,balance,0,1000,,,
+0,ledger,SubAuto1,SubAuto2,SubAuto3,Auto1,

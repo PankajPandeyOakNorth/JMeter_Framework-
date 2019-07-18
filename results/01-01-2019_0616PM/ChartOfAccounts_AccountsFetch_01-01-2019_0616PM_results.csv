@@ -1,0 +1,6 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+01-01-2019,0617PM,ChartOfAccounts_AccountsFetch,1,,C:\ACorn\jsonOutput\01-01-2019_0616PM\ChartOfAccounts_AccountsFetchjsonOutput_1.json,FAIL,|Expected value for allowManualJournalEntry is true and actual value is null
+01-01-2019,0617PM,ChartOfAccounts_AccountsFetch,2,,C:\ACorn\jsonOutput\01-01-2019_0616PM\ChartOfAccounts_AccountsFetchjsonOutput_2.json,FAIL,|Expected value for allowManualJournalEntry is true and actual value is null
+01-01-2019,0617PM,ChartOfAccounts_AccountsFetch,3,,C:\ACorn\jsonOutput\01-01-2019_0616PM\ChartOfAccounts_AccountsFetchjsonOutput_3.json,FAIL,|Expected value for allowManualJournalEntry is true and actual value is null
+01-01-2019,0618PM,ChartOfAccounts_AccountsFetch,7,,C:\ACorn\jsonOutput\01-01-2019_0616PM\ChartOfAccounts_AccountsFetchjsonOutput_7.json,FAIL,|Expected value for allowManualJournalEntry is true and actual value is null
+01-01-2019,0618PM,ChartOfAccounts_AccountsFetch,8,,C:\ACorn\jsonOutput\01-01-2019_0616PM\ChartOfAccounts_AccountsFetchjsonOutput_8.json,FAIL,|Expected value for allowManualJournalEntry is true and actual value is null

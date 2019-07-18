@@ -1,0 +1,1 @@
+{"timestamp":"2019-06-06T12:22:40.805","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["409"],"arguments":["Identifier Already Exist"],"defaultMessage":"Identifier Already Exist"}],"path":"/fees"}

@@ -1,0 +1,1 @@
+{"timestamp":"2019-05-16T10:49:53.893","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["400"],"arguments":["Simple repayment handle one due installment only."],"defaultMessage":"Simple repayment handle one due installment only."}],"path":"/transaction/repayment"}

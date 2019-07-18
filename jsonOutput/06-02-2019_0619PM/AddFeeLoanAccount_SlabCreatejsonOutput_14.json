@@ -1,0 +1,1 @@
+{"timestamp":1549457415939,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Reference amount can not be null for %cent of linked amount fee formula","path":"/portfolio/v1/loanaccount"}

@@ -1,0 +1,14 @@
+type,identifier,name,allowManualJournalEntry,holders/0,holders/1,signatureAuthorities/0,signatureAuthorities/1,balance,ledger
+LIABILITY,Account1,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1
+EQUITY,Account2,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2
+REVENUE,Account3,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3
+EXPENSE,Account4,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto4
+ASSET,Account5,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto5
+LIABILITY,NULL,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1
+LIABILITY,Account6,COUNT,FALSE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1
+LIABILITY,Account7,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,1000,SubAuto1
+LIABILITY,Account8,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2
+LIABILITY,Account9,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3
+LIABILITY,Account10,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,Auto1
+LIABILITY,Account11,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto5
+LIABILITY,Account1,COUNT,FALSE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2

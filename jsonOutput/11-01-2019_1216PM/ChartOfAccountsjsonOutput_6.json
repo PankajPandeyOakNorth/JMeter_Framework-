@@ -1,0 +1,1 @@
+{"timestamp":1547189218209,"status":400,"error":"Bad Request","exception":"org.springframework.http.converter.HttpMessageNotReadableException","message":"Bad Request","path":"/accounting/v1/ledgers"}

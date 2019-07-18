@@ -1,0 +1,18 @@
+0,feeId,Expense_01,,,,,,
+0,feeApplicationType,EVENT,,,,,,
+0,adhocDueDate,null,,,,,,
+0,periodValue,null,,,,,,
+0,periodFrequency,null,,,,,,
+0,paymentDateMethod,null,,,,,,
+0,paymentDate,null,,,,,,
+0,feeEvent,firstdisbursment,Repayment,Restructuring,Termination,Prepayment,,
+0,feeCalculationMethod,FIXED,,,,,,
+1,feeFormula,FLAT,% Of Linked Attribute,% Of Linked Attribute,% Of Linked Attribute,% Of Linked Attribute,Make Whole Term,Make Whole Amount
+1,feeAmount,500,null,null,null,null,null,null
+1,feePercentage,null,50,40,20,10,null,null
+1,percentageOf,null,Outstanding,Prepaid,Unutilized,Specific,null,null
+1,makeWholePeriodValue,null,,,,,6,null
+1,makeWholePeriodFrequency,null,,,,,MONTHS,null
+1,makeWholeAmount,null,,,,,,10000
+0,slabType,null,,,,,,
+0,slabReferenceCode,null,,,,,,

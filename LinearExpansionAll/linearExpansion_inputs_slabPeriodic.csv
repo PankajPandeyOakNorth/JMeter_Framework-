@@ -1,0 +1,27 @@
+0,feeId,Income_01,,
+0,feeApplicationType,PERIODIC,,
+0,adhocDueDate,null,,
+0,periodValue,2,,
+0,periodFrequency,MONTHS,,
+2,paymentDateMethod,IPD,SPD,
+2,paymentDate,null,10-11-2018,
+0,feeEvent,null,,
+0,feeCalculationMethod,SLAB BASED,,
+0,feeFormula,FLAT,% Of Linked Attribute,Make Whole Term
+0,feeAmount,null,,
+0,feePercentage,null,,
+0,percentageOf,null,,
+0,makeWholePeriodValue,null,,
+0,makeWholePeriodFrequency,null,,
+0,makeWholeAmount,null,,
+0,slabType,Time Period Based,,
+0,slabReferenceCode,Prepayment Date,,
+1,slabDetails.0.sequenceNumber,null,,
+1,slabDetails.0.fromDate,10-11-2018,,
+1,slabDetails.0.fromAmount,1000,,
+1,slabDetails.0.feeAmount,300,,
+1,slabDetails.0.feePercentage,null,5,
+1,slabDetails.0.referenceAccount,null,,
+1,slabDetails.0.makeWholePeriod,null,,2
+1,slabDetails.0.makeWholeFrequency,null,,MONTHS
+1,slabDetails.0.makeWholeAmount,null,,1000

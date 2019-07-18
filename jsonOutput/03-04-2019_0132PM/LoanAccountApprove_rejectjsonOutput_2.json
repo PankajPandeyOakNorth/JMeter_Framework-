@@ -1,0 +1,1 @@
+{"timestamp":1554278606671,"status":404,"error":"Not Found","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Associated loan account with identifier 3096 not found !","path":"/portfolio/v1/loanaccount/update/accountstatus/3096"}

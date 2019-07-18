@@ -1,0 +1,3 @@
+testScenarioNumber,testObjective,urlParameter,identifier,feeAccountingType,description,feeApplicationType,feeFrequency,paymentMethod,feeCalculationMethod,expectedResponseCode
+,,NA,RepayPerIncAmort,INCOME,Testing,PERIODIC,MONTHS,IPD,FIXED,200
+,,NA,RepayPerIncAccr,INCOME,Testing,PERIODIC,MONTHS,IPD,FIXED,200

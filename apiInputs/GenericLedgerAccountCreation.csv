@@ -1,0 +1,16 @@
+testScenarioNumber,testObjective,urlParameter,identifier,name,type,ledger,balance,expectedResponseCode
+,,NA,RevAccnt1,RevAccnt1,REVENUE,RepayRevSubledger,0,202
+,,NA,RevAccnt2,RevAccnt2,REVENUE,RepayRevSubledger,0,202
+,,NA,RevAccnt3,RevAccnt3,REVENUE,RepayRevSubledger,0,202
+,,NA,LiabAccnt1,LiabAccnt1,LIABILITY,RepayLibSubledger,0,202
+,,NA,LiabAccnt2,LiabAccnt2,LIABILITY,RepayLibSubledger,0,202
+,,NA,LiabAccnt3,LiabAccnt3,LIABILITY,RepayLibSubledger,0,202
+,,NA,ExpAccnt1,ExpAccnt1,EXPENSE,RepayExpSubledger,0,202
+,,NA,ExpAccnt2,ExpAccnt2,EXPENSE,RepayExpSubledger,0,202
+,,NA,ExpAccnt3,ExpAccnt3,EXPENSE,RepayExpSubledger,0,202
+,,NA,EquAccnt1,EquAccnt1,EQUITY,RepayEquSubledger,0,202
+,,NA,EquAccnt2,EquAccnt2,EQUITY,RepayEquSubledger,0,202
+,,NA,AsseAccnt1,AsseAccnt1,ASSET,RepaySubledger,0,202
+,,NA,AsseAccnt2,AsseAccnt2,ASSET,RepaySubledger,0,202
+,,NA,AsseAccnt3,AsseAccnt3,ASSET,RepaySubledger,0,202
+,,NA,AsseAccnt4,AsseAccnt4,ASSET,RepaySubledger,0,202

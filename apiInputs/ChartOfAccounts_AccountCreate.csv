@@ -1,0 +1,14 @@
+testScenarioNumber,testObjective,urlParameter,type,identifier,name,allowManualJournalEntry,holders.0,holders.1,signatureAuthorities.0,signatureAuthorities.1,balance,ledger,expectedResponseCode
+,,NA,LIABILITY,Account1,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1,202
+,,NA,EQUITY,Account2,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2,202
+,,NA,REVENUE,Account3,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3,202
+,,NA,EXPENSE,Account4,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto4,202
+,,NA,ASSET,Account5,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto5,202
+,,NA,LIABILITY,NULL,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1,400
+,,NA,LIABILITY,Account6,COUNT,FALSE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1,202
+,,NA,LIABILITY,Account7,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,1000,SubAuto1,400
+,,NA,EQUITY,Account8,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2,202
+,,NA,REVENUE,Account9,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3,202
+,,NA,LIABILITY,Account10,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,Auto1,400
+,,NA,LIABILITY,Account11,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto5,400
+,,NA,LIABILITY,Account1,COUNT,FALSE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2,409

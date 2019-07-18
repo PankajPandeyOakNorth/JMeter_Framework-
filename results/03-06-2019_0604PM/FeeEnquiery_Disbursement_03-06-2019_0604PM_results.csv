@@ -1,0 +1,5 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+03-06-2019,0604PM,FeeEnquiery_Disbursement,1,C:\ACorn\jsonPayload\03-06-2019_0604PM\testScenario_for_API__FeeEnquiery_Disbursement1.json,C:\ACorn\jsonOutput\03-06-2019_0604PM\FeeEnquiery_DisbursementjsonOutput_1.json,FAIL,Actual response code received is 400
+03-06-2019,0604PM,FeeEnquiery_Disbursement,2,C:\ACorn\jsonPayload\03-06-2019_0604PM\testScenario_for_API__FeeEnquiery_Disbursement2.json,C:\ACorn\jsonOutput\03-06-2019_0604PM\FeeEnquiery_DisbursementjsonOutput_2.json,FAIL,Actual response code received is 400
+03-06-2019,0604PM,FeeEnquiery_Disbursement,3,C:\ACorn\jsonPayload\03-06-2019_0604PM\testScenario_for_API__FeeEnquiery_Disbursement3.json,C:\ACorn\jsonOutput\03-06-2019_0604PM\FeeEnquiery_DisbursementjsonOutput_3.json,FAIL,Actual response code received is 400
+03-06-2019,0604PM,FeeEnquiery_Disbursement,4,C:\ACorn\jsonPayload\03-06-2019_0604PM\testScenario_for_API__FeeEnquiery_Disbursement4.json,C:\ACorn\jsonOutput\03-06-2019_0604PM\FeeEnquiery_DisbursementjsonOutput_4.json,FAIL,Actual response code received is 400

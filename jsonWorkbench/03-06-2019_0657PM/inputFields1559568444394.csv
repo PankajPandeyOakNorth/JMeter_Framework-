@@ -1,0 +1,3 @@
+collectionMethod,repaymentDate,repaymentCurrency,cashCollateralUtilizationAmount,retainedInterestUtilizationAmount,customerRepayAmount,version,loanId
+DFRMCSTM,2019-03-07,INR,null,null,888487.88,2,4310
+DFRMCSTM,2019-03-07,INR,null,null,888487.88,2,4312

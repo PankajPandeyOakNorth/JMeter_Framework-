@@ -1,0 +1,3 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+25-05-2019,0444PM,RepaymentDisbursement_Retained_cashcoll,1,C:\ACorn\jsonPayload\25-05-2019_0443PM\testScenario_for_API__RepaymentDisbursement_Retained_cashcoll1.json,C:\ACorn\jsonOutput\25-05-2019_0443PM\RepaymentDisbursement_Retained_cashcolljsonOutput_1.json,PASS,
+25-05-2019,0444PM,RepaymentDisbursement_Retained_cashcoll,2,C:\ACorn\jsonPayload\25-05-2019_0443PM\testScenario_for_API__RepaymentDisbursement_Retained_cashcoll2.json,C:\ACorn\jsonOutput\25-05-2019_0443PM\RepaymentDisbursement_Retained_cashcolljsonOutput_2.json,PASS,

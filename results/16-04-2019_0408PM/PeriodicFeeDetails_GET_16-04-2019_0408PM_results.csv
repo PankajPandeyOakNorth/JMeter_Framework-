@@ -1,0 +1,20 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+16-04-2019,0408PM,PeriodicFeeDetails_GET,1,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_1.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,2,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_2.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,3,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_3.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,4,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_4.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,5,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_5.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,6,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_6.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,7,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_7.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,8,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_8.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,9,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_9.json,FAIL,Actual response code received is 500
+16-04-2019,0408PM,PeriodicFeeDetails_GET,10,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_10.json,FAIL,Actual response code received is 500
+16-04-2019,0408PM,PeriodicFeeDetails_GET,11,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_11.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,12,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_12.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,13,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_13.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,14,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_14.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,15,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_15.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,16,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_16.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,17,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_17.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,18,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_18.json,PASS,
+16-04-2019,0408PM,PeriodicFeeDetails_GET,19,,C:\ACorn\jsonOutput\16-04-2019_0408PM\PeriodicFeeDetails_GETjsonOutput_19.json,PASS,

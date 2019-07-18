@@ -1,0 +1,1 @@
+{"timestamp":1557900727204,"status":500,"error":"Internal Server Error","exception":"java.lang.ArrayIndexOutOfBoundsException","message":"org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.ArrayIndexOutOfBoundsException","path":"/portfolio/v1/loanaccount/accountsWithPeriodicFee"}

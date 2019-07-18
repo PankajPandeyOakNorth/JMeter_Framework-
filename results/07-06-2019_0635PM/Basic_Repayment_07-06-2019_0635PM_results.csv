@@ -1,0 +1,6 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+07-06-2019,0636PM,Basic_Repayment,1,C:\ACorn\jsonPayload\07-06-2019_0635PM\testScenario_for_API__Basic_Repayment1.json,C:\ACorn\jsonOutput\07-06-2019_0635PM\Basic_RepaymentjsonOutput_1.json,FAIL,Actual response code received is 400
+07-06-2019,0636PM,Basic_Repayment,2,C:\ACorn\jsonPayload\07-06-2019_0635PM\testScenario_for_API__Basic_Repayment2.json,C:\ACorn\jsonOutput\07-06-2019_0635PM\Basic_RepaymentjsonOutput_2.json,FAIL,Actual response code received is 400
+07-06-2019,0636PM,Basic_Repayment,3,C:\ACorn\jsonPayload\07-06-2019_0635PM\testScenario_for_API__Basic_Repayment3.json,C:\ACorn\jsonOutput\07-06-2019_0635PM\Basic_RepaymentjsonOutput_3.json,FAIL,Actual response code received is 400
+07-06-2019,0636PM,Basic_Repayment,4,C:\ACorn\jsonPayload\07-06-2019_0635PM\testScenario_for_API__Basic_Repayment4.json,C:\ACorn\jsonOutput\07-06-2019_0635PM\Basic_RepaymentjsonOutput_4.json,FAIL,Actual response code received is 400
+07-06-2019,0636PM,Basic_Repayment,5,C:\ACorn\jsonPayload\07-06-2019_0635PM\testScenario_for_API__Basic_Repayment5.json,C:\ACorn\jsonOutput\07-06-2019_0635PM\Basic_RepaymentjsonOutput_5.json,FAIL,Actual response code received is 400

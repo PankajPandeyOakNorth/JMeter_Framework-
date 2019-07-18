@@ -1,0 +1,15 @@
+testScenarioNumber,testObjective,urlParameter,type,identifier,name,description,currency,showAccountsInChart,expectedResponseCode
+,,NA,LIABILITY,Autonoms1,Tax,Ledger1,USD,TRUE,202
+,,NA,EQUITY,Autonoms2,Tax,Ledger1,USD,TRUE,202
+,,NA,REVENUE,Autonoms3,Tax,Ledger1,USD,TRUE,202
+,,NA,EXPENSE,Autonoms4,Tax,Ledger1,USD,TRUE,202
+,,NA,ASSET,Autonoms5,Tax,Ledger1,USD,TRUE,202
+,,NA,ABC,Autonoms6,Tax,Ledger1,USD,TRUE,400
+,,NA,LIABILITY,NULL,Tax,Ledger1,USD,TRUE,400
+,,NA,LIABILITY,Autonoms7,NULL,Ledger1,USD,TRUE,400
+,,NA,LIABILITY,Autonoms8,Tax,NULL,USD,TRUE,202
+,,NA,LIABILITY,Autonoms9,Tax,Ledger1,BZD,TRUE,202
+,,NA,LIABILITY,Autonoms10,Tax,Ledger1,NULL,TRUE,400
+,,NA,LIABILITY,Autonoms11,Tax,Ledger1,ABC,TRUE,400
+,,NA,LIABILITY,Autonoms12,Tax,Ledger1,USD,FALSE,202
+,,NA,LIABILITY,Autonoms1,Tax,Ledger1,USD,TRUE,409

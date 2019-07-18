@@ -1,0 +1,1 @@
+{"timestamp":1552909368044,"status":409,"error":"Conflict","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Ledger Autonom1 already exists.","path":"/accounting/v1/ledgers"}

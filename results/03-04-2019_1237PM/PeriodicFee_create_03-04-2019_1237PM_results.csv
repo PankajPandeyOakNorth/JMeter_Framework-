@@ -1,0 +1,3 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+03-04-2019,1238PM,PeriodicFee_create,1,C:\ACorn\jsonPayload\03-04-2019_1237PM\testScenario_for_API__PeriodicFee_create1.json,C:\ACorn\jsonOutput\03-04-2019_1237PM\PeriodicFee_createjsonOutput_1.json,PASS,
+03-04-2019,1238PM,PeriodicFee_create,2,C:\ACorn\jsonPayload\03-04-2019_1237PM\testScenario_for_API__PeriodicFee_create2.json,C:\ACorn\jsonOutput\03-04-2019_1237PM\PeriodicFee_createjsonOutput_2.json,PASS,

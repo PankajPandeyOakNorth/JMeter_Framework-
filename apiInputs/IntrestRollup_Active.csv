@@ -1,0 +1,13 @@
+testScenarioNumber,testObjective,urlParameter,loanId,externalId,channel,version,notes,paymentDetail,disbursementDate,repaymentDateMethod,firstRepaymentDate,disbursementAmount,expectedResponseCode
+,,NA,3681,null,null,1,null,null,2019-01-03,SPD,2019-01-04,10000000,202
+,,NA,3682,null,null,1,null,null,2019-01-31,LWD,null,10000000,202
+,,NA,3683,null,null,1,null,null,2019-02-01,FWD,null,10000000,202
+,,NA,3684,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3685,null,null,1,null,null,2018-04-04,ANIVRSRY,null,10000000,202
+,,NA,3686,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3687,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3688,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3689,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3690,null,null,1,null,null,2019-01-07,ANIVRSRY,null,10000000,202
+,,NA,3691,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202
+,,NA,3692,null,null,1,null,null,2019-01-04,ANIVRSRY,null,10000000,202

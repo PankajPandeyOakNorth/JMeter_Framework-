@@ -1,0 +1,1 @@
+{"identifier":"RepayHoldRetInt","feeCalculationMethod":"FIXED","feeFrequency":null,"feeApplicationType":"EVENT","description":"Testing","paymentMethod":null,"holdType":"RETINT","feeGroup":null,"feeAccountingType":"HOLD","feeEvent":"REPAYMNT"}

@@ -1,0 +1,16 @@
+LoanId,LastRepaymentReversed,LastRepaymentReversed,FeeApplicationType,CapitalixetoPrincipal,Fees,LoansType,,,
+34,Basic ,currendate,Periodic,FALSE,with fees,Emi,,,3956
+34,Basic ,valuedate,Periodic,FALSE,with fees,Emi,,,3957
+34,Advance ,currentdate,Periodic,FALSE,with fees,Emi,,,3958
+34,Advance ,value date,Periodic,FALSE,with fees,Emi,,,3959
+34,Prepayment,knockOffcurrentdate,Periodic,FALSE,with fees,Emi,,,3960
+34,Prepayment,SchduleRegenertionvaluedate,Periodic,FALSE,with fees,Emi,,,3961
+34,Basic ,currendate,Periodic,TRUE,with fees,Emi,,,3962
+34,Basic ,currendate,Adhoc,TRUE,with fees,Emi,,,3969
+34,Basic ,currendate,Adhoc,FALSE,with fees,Emi,,,3970
+34,Basic ,currendate,Event,FALSE,with fees,Emi,,,3968
+34,Basic ,currendate,Periodic,FALSE,W/O Fees,Emi,,,3955
+34,Basic ,currendate,Periodic,FALSE,with fees,Epi,,,3963
+34,Basic ,currendate,Periodic,FALSE,with fees,IntrestRollup,,,3964
+34,Basic ,currendate,Periodic,FALSE,with fees,IPP,,,3965
+34,Basic ,currendate,Periodic,FALSE,with fees,ino,,,3966

@@ -1,0 +1,1 @@
+{"timestamp":1549459240713,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Fee formula can not be null","path":"/portfolio/v1/loanaccount"}

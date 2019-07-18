@@ -1,0 +1,4 @@
+testScenarioNumber,testObjective,urlParameter,reversalRemarks,version,expectedResponseCode
+,,20080,disburse,2,202
+,,20081,disburse,2,202
+,,abc,,,400

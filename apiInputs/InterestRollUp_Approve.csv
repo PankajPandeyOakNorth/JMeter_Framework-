@@ -1,0 +1,16 @@
+testScenarioNumber,testObjective,urlParameter,newStatus,newSubStatus,comments,version,expectedResponseCode
+,,Intr112Roll,APPROVED,null,Testing,0,202
+,,Intr113Roll,APPROVED,null,Testing,0,202
+,,Intr114Roll,APPROVED,null,Testing,0,202
+,,Intr115Roll,APPROVED,null,Testing,0,202
+,,Intr116Roll,APPROVED,null,Testing,0,202
+,,Intr117Roll,APPROVED,null,Testing,0,202
+,,Intr118Roll,APPROVED,null,Testing,0,202
+,,Intr119Roll,APPROVED,null,Testing,0,202
+,,Intr120Roll,APPROVED,null,Testing,0,202
+,,Intr121Roll,APPROVED,null,Testing,0,202
+,,Intr122Roll,APPROVED,null,Testing,0,202
+,,Intr123Roll,APPROVED,null,Testing,0,202
+,,,APPROVED,null,Testing,0,202
+,,,REJECTED,null,Testing,0,202
+,,abc,APPROVED,null,Testing,0,400

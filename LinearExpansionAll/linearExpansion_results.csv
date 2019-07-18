@@ -1,0 +1,16 @@
+loanId,repaymentCurrency,collectionMethod,remarks,repaymentDate,customerRepayAmount,paymentAllocationMethod
+2143,Valid ,DBTCSTM,rahul,after,LessThanDue,HORZNTL
+2144,Valid ,DBTCSTM,rahul,after,LessThanDue,HORZNTL
+2143,valid,DBTCSTM,rahul,after,LessThanDue,HORZNTL
+2143,Valid ,CSTMACC,rahul,after,LessThanDue,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,LessThanDue,HORZNTL
+2143,Valid ,DBTCSTM,rahul,same day,LessThanDue,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,Exact Due,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,Less than fee,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,ExactFeeAmount,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,GreaterThanFee and less than interest,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,ExactAmont Fee + Int,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,GreaterFee + Int,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,exact fee+int+principal,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,great than total due,HORZNTL
+2143,Valid ,DBTCSTM,rahul,after,LessThanDue,VERTICAL

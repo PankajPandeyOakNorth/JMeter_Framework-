@@ -1,0 +1,4 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+04-01-2019,0454PM,ProductAccountMapping_create,3,C:\ACorn\jsonPayload\04-01-2019_0452PM\testScenario_for_API__ProductAccountMapping_create3.json,C:\ACorn\jsonOutput\04-01-2019_0452PM\ProductAccountMapping_createjsonOutput_3.json,PASS,
+04-01-2019,0454PM,ProductAccountMapping_create,4,C:\ACorn\jsonPayload\04-01-2019_0452PM\testScenario_for_API__ProductAccountMapping_create4.json,C:\ACorn\jsonOutput\04-01-2019_0452PM\ProductAccountMapping_createjsonOutput_4.json,PASS,
+04-01-2019,0455PM,ProductAccountMapping_create,5,C:\ACorn\jsonPayload\04-01-2019_0452PM\testScenario_for_API__ProductAccountMapping_create5.json,C:\ACorn\jsonOutput\04-01-2019_0452PM\ProductAccountMapping_createjsonOutput_5.json,PASS,

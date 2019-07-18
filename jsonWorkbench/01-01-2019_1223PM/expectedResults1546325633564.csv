@@ -1,0 +1,9 @@
+expectedResponseCode,type,identifier,name,description,parentLedgerIdentifier,currency,totalValue,showAccountsInChart
+200,LIABILITY,Auto1,Tax,Ledger1,,USD,0,TRUE
+200,EQUITY,Auto2,Tax,Ledger1,,USD,0,TRUE
+200,REVENUE,Auto3,Tax,Ledger1,,USD,0,TRUE
+200,EXPENSE,Auto4,Tax,Ledger1,,USD,0,TRUE
+200,ASSET,Auto5,Tax,Ledger1,,USD,0,TRUE
+200,LIABILITY,Auto8,Tax,null,,USD,0,TRUE
+200,LIABILITY,Auto9,Tax,Ledger1,,BZD,0,TRUE
+200,LIABILITY,Auto12,Tax,Ledger1,,USD,0,FALSE

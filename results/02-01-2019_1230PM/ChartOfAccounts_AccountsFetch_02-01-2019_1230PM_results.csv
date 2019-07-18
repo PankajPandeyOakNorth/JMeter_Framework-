@@ -1,0 +1,3 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+02-01-2019,1231PM,ChartOfAccounts_AccountsFetch,1,,C:\ACorn\jsonOutput\02-01-2019_1230PM\ChartOfAccounts_AccountsFetchjsonOutput_1.json,PASS,
+02-01-2019,1231PM,ChartOfAccounts_AccountsFetch,2,,C:\ACorn\jsonOutput\02-01-2019_1230PM\ChartOfAccounts_AccountsFetchjsonOutput_2.json,PASS,

@@ -1,0 +1,8 @@
+identifier,feeCalculationMethod,feeFrequency,feeApplicationType,description,paymentMethod,holdType,feeGroup,feeAccountingType,feeEvent
+RepayEveIncAmort,FIXED,null,EVENT,Testing,null,null,null,INCOME,REPAYMNT
+RepayPerIncAmort,FIXED,MONTHS,PERIODIC,Testing,IPD,null,null,INCOME,null
+RepayPerIncAccr,FIXED,MONTHS,PERIODIC,Testing,IPD,null,null,INCOME,null
+RepayHoldRetInt,FIXED,null,EVENT,Testing,null,RETINT,null,HOLD,REPAYMNT
+RepayHoldcashcol,FIXED,null,EVENT,Testing,null,CASHCOL,null,HOLD,REPAYMNT
+RepayPassEve,FIXED,null,EVENT,Testing,null,null,null,INCOME,REPAYMNT
+RepayPassEveAmort,FIXED,null,EVENT,Testing,null,null,null,INCOME,REPAYMNT

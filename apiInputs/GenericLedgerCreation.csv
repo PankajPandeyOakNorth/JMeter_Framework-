@@ -1,0 +1,6 @@
+testScenarioNumber,testObjective,urlParameter,identifier,type,name,showAccountsInChart,description,currency,expectedResponseCode
+,,NA,0_RepayAsset,ASSET,0_RepayAsset,TRUE,Testing,INR,202
+,,NA,0_RepayLiability,LIABILITY,0_RepayLiability,TRUE,Testing,INR,202
+,,NA,0_RepayExpe,EXPENSE,0_RepayExpe,TRUE,Testing,INR,202
+,,NA,0_RepayRevenue,REVENUE,0_RepayRevenue,TRUE,Testing,INR,202
+,,NA,0_RepayEquity,EQUITY,0_RepayEquity,TRUE,Testing,INR,202

@@ -1,0 +1,3 @@
+testScenarioNumber,testObjective,urlParameter,identifier,feeAccountingType,description,feeApplicationType,feeCalculationMethod,feeEvent,holdType,expectedResponseCode
+,,NA,RepayHoldRetInt,HOLD,Testing,EVENT,FIXED,FDSBRMNT,RETINT,200
+,,NA,RepayHoldcashcol,HOLD,Testing,EVENT,FIXED,FDSBRMNT,CASHCOL,200

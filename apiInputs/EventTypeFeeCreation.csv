@@ -1,0 +1,4 @@
+testScenarioNumber,testObjective,urlParameter,identifier,feeAccountingType,description,feeApplicationType,feeCalculationMethod,feeEvent,expectedResponseCode
+,,NA,RepayEveIncAcc,INCOME,Testing,EVENT,FIXED,REPAYMNT,200
+,,NA,RepayEveIncAmort,INCOME,Testing,EVENT,FIXED,REPAYMNT,200
+,,NA,RepayPassEve,PASTROUH,Testing,EVENT,FIXED,FDSBRMNT,200

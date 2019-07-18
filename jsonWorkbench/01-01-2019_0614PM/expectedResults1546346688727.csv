@@ -1,0 +1,9 @@
+expectedResponseCode,type,identifier,name,allowManualJournalEntry,holders/0,holders/1,signatureAuthorities/0,signatureAuthorities/1,balance,ledger,state,alternativeAccountNumber
+200,LIABILITY,Account1,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1,OPEN,null
+200,EQUITY,Account2,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2,OPEN,null
+200,REVENUE,Account3,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3,OPEN,null
+200,EXPENSE,Account4,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto4,OPEN,null
+200,ASSET,Account5,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto5,OPEN,null
+200,LIABILITY,Account6,COUNT,FALSE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto1,OPEN,null
+200,EQUITY,Account8,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto2,OPEN,null
+200,REVENUE,Account9,COUNT,TRUE,First Holder,Second Holder,Second To Sign,First To Sign,0,SubAuto3,OPEN,null

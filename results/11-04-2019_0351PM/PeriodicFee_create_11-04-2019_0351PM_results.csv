@@ -1,0 +1,3 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+11-04-2019,0352PM,PeriodicFee_create,1,C:\ACorn\jsonPayload\11-04-2019_0351PM\testScenario_for_API__PeriodicFee_create1.json,C:\ACorn\jsonOutput\11-04-2019_0351PM\PeriodicFee_createjsonOutput_1.json,FAIL,Actual response code received is 400
+11-04-2019,0352PM,PeriodicFee_create,2,C:\ACorn\jsonPayload\11-04-2019_0351PM\testScenario_for_API__PeriodicFee_create2.json,C:\ACorn\jsonOutput\11-04-2019_0351PM\PeriodicFee_createjsonOutput_2.json,FAIL,Actual response code received is 400

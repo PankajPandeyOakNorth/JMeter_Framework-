@@ -1,0 +1,2 @@
+disbursementDate,disbursementAmount,repaymentDateMethod,firstRepaymentDate,feeCollectionMethod,finalDisbursementAmount,actualCustomerPayout,loanTerminationDate,feeList/0/feeId,feeList/0/feeName,feeList/0/feeType,feeList/0/feeAccountMappingId,feeList/0/plannedAmount,feeList/0/actualAmount,feeList/0/remarks,loanId,version
+2019-01-04,10000000,ANIVRSRY,null,NETOFF,10000000,9999000,,15,RepayHoldRetInt,HOLD,3044,1000,1000,null,169,1

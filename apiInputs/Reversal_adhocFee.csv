@@ -1,0 +1,3 @@
+testScenarioNumber,testObjective,urlParameter,loanId,feeId,eventType,feeAmount,capitalizeToPrincipal,remarks,version,adhocFeeDate,expectedResponseCode
+,,NA,3969,489,ADHOCFEE,200,TRUE,testing,2,2019-06-19,202
+,,NA,3970,489,ADHOCFEE,200,FALSE,testing,2,2019-06-19,202

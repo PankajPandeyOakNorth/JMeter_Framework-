@@ -1,0 +1,5 @@
+0,LoanId,34,,,,,
+2,priorTolastUnreversedtransaction,Repayment,Periodic,Periodic,Adhoc,Adhoc,Rollup
+2,CapitalixetoPrincipal,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3,Fees,with fees,W/O Fees,,,,
+4,LoansType,Emi,Epi,IntrestRollup,IPP,ino,

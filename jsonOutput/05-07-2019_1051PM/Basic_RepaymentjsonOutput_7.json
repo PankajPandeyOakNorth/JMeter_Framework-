@@ -1,0 +1,1 @@
+{"timestamp":"2019-07-05T17:22:05.891","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["400"],"arguments":["Repayment can not be before transaction date !"],"defaultMessage":"Repayment can not be before transaction date !"}],"path":"/transaction/repayment"}

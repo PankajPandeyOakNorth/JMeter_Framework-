@@ -1,0 +1,1 @@
+{"timestamp":"2019-06-03T12:34:30.791","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["400"],"arguments":["firstRepaymentDate not applicable for anniversary"],"defaultMessage":"firstRepaymentDate not applicable for anniversary"}],"path":"/transaction/disburseLoan"}

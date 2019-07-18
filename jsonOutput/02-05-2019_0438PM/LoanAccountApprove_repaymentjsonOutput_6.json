@@ -1,0 +1,1 @@
+{"timestamp":1556795356455,"status":404,"error":"Not Found","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Associated loan account with identifier none1783pnone1784per1er1 not found !","path":"/portfolio/v1/loanaccount/update/accountstatus/none1783pnone1784per1er1"}

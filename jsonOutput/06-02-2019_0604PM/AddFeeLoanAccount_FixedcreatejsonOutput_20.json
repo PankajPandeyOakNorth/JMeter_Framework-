@@ -1,0 +1,1 @@
+{"timestamp":1549456557155,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Make whole period frequency can not be null for make whole term fee formula","path":"/portfolio/v1/loanaccount"}

@@ -1,0 +1,1 @@
+{"identifier":"RepayHoldcashcol","feeCalculationMethod":"FIXED","feeFrequency":null,"feeApplicationType":"EVENT","description":"Testing","paymentMethod":null,"holdType":"CASHCOL","feeGroup":null,"feeAccountingType":"HOLD","feeEvent":"REPAYMNT"}

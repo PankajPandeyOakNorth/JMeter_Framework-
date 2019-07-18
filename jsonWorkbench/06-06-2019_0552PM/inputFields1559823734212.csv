@@ -1,0 +1,10 @@
+identifier,feeAccountingType,holdType,description,feeApplicationType,feeFrequency,paymentMethod,feeEvent,feeCalculationMethod,feeGroup
+Feemod1,INCOME,null,INCOMETEST,EVENT,null,null,FDSBRMNT,FIXED,null
+FeeMod2,EXPENSE,null,EXPENSETEST,EVENT,null,null,REPAYMNT,FIXED,null
+Feemod3,PASTROUH,null,PassTest,EVENT,null,null,RESTRCTE,FIXED,ARNGMNTF
+Feemod3,HOLD,RETINT,Retaintest,EVENT,null,null,TERMNATN,FIXED,INTRDCRF
+Feemod4,HOLD,CASHCOL,CashTest,EVENT,null,null,REPAYMNT,FIXED,MNTRGF
+Feemod5,INCOME,null,PeriodicTest,PERIODIC,1,IPD,null,FIXED,null
+Feemod6,INCOME,null,Adhoctest,ADHOC,null,null,null,FIXED,EXTF
+Feemod7,EXPENSE,null,Adhoctest,ADHOC,null,null,null,FIXED,null
+Feemod8,PASTROUH,null,Adhoctest,ADHOC,null,null,null,FIXED,null

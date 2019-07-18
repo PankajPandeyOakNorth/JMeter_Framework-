@@ -1,0 +1,1 @@
+{"timestamp":1558094343801,"status":500,"error":"Internal Server Error","exception":"java.lang.IndexOutOfBoundsException","message":"org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index: 4, Size: 3","path":"/portfolio/v1/transaction/autoapportion"}

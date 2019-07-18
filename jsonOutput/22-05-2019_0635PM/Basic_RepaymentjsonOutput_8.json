@@ -1,0 +1,1 @@
+{"timestamp":"2019-05-22T13:06:26.362","status":"400","error":"Bad Request","errorMessage":"Business Logic Error","exception":"org.apache.fineract.cn.lang.BusinessLogicException","errors":[{"codes":["400"],"arguments":["No dues found, use advance repayment for prepayment."],"defaultMessage":"No dues found, use advance repayment for prepayment."}],"path":"/transaction/repayment"}

@@ -1,0 +1,15 @@
+testScenarioNumber,testObjective,urlParameter,identifier,feeAccountingType,holdType,description,feeApplicationType,feeFrequency,paymentMethod,feeEvent,feeCalculationMethod,feeGroup,expectedResponseCode
+,,505,Feemodify1,INCOME,null,INCOMETEST1,EVENT,null,null,FDSBRMNT,FIXED,ARNGMNTF,200
+,,505,Feemodify1,INCOME,null,INCOMETEST1,EVENT,null,null,FDSBRMNT,FIXED,INTRDCRF,400
+,,505,Feemodify2,INCOME,null,INCOMETEST2,EVENT,null,null,FDSBRMNT,FIXED,ARNGMNTF,200
+,,506,FeeModify3,EXPENSE,null,EXPENSETEST3,EVENT,null,null,REPAYMNT,FIXED,MNTRGF,200
+,,507,Feemodify4,PASTROUH,null,PassTest1,EVENT,null,null,RESTRCTE,FIXED,ARNGMNTF,200
+,,508,Feemod5,HOLD,RETINT,Retaintest1,EVENT,null,null,TERMNATN,FIXED,INTRDCRF,200
+,,508,Feemod5,HOLD,RETINT,Retaintest1,EVENT,null,null,TERMNATN,FIXED,MNTRGF,400
+,,509,Feemod6,HOLD,CASHCOL,CashTest1,EVENT,null,null,REPAYMNT,FIXED,MNTRGF,200
+,,509,Feemod6,HOLD,CASHCOL,CashTest1,EVENT,null,null,REPAYMNT,FIXED,INTRDCRF,400
+,,510,Feemod7,INCOME,null,PeriodicTest1,PERIODIC,1,IPD,null,FIXED,null,200
+,,510,Feemod7,INCOME,null,PeriodicTest1,PERIODIC,1,IPD,null,FIXED,ARNGMNTF,200
+,,511,Feemod8,INCOME,null,Adhoctest1,ADHOC,null,null,null,FIXED,EXTF,200
+,,512,Feemod9,EXPENSE,null,Adhoctest2,ADHOC,null,null,null,FIXED,null,200
+,,513,Feemod10,PASTROUH,null,Adhoctest3,ADHOC,null,null,null,FIXED,null,200

@@ -1,0 +1,1 @@
+{"timestamp":1546336776223,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Account type LIABILITY must match ledger type SubAuto3.","path":"/accounting/v1/accounts"}

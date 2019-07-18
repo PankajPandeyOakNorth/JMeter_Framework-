@@ -1,0 +1,11 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+03-04-2019,1256PM,PeriodicFee_create,1,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create1.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_1.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,2,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create2.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_2.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,3,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create3.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_3.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,4,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create4.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_4.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,5,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create5.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_5.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,6,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create6.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_6.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,7,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create7.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_7.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,8,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create8.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_8.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,9,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create9.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_9.json,PASS,
+03-04-2019,1256PM,PeriodicFee_create,10,C:\ACorn\jsonPayload\03-04-2019_1256PM\testScenario_for_API__PeriodicFee_create10.json,C:\ACorn\jsonOutput\03-04-2019_1256PM\PeriodicFee_createjsonOutput_10.json,PASS,

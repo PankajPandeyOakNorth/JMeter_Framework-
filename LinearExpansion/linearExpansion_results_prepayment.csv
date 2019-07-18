@@ -1,0 +1,35 @@
+loanId,prepaymentType,paymentAllocationMethod,collectionMethod,DaysCollection,Calculationmethod,LockInstallmentlockPrincipal,repaymentDate,period,customerRepayAmount,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,VERTCAL,DFRMCSTM,A/A,EMI,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,BNKTRASF,A/A,EMI,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMREIN,A/A,EMI,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSCL,A/A,EMI,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,ADVCOLL,A/A,EMI,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/360,EMI,Yes,Before 1st due,Single,prepayment with existing dues,3942
+21,RGSCHDL,HORZNTL,DFRMCSTM,30/360,EMI,Yes,Before 1st due,Single,prepayment with existing dues,3943
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,NO,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EPI,Yes,Before 1st due,Single,prepayment with existing dues,3944
+21,RGSCHDL,HORZNTL,DFRMCSTM,30/360,EPI,NO,Before 1st due,Single,prepayment with existing dues,3945
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/360,EAP,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,30/360,IPP,Yes,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,30/360,IPP,No,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,INO,Ballon,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/360,IGP,Ballon,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,30/360,Rollup,Ballon,Before 1st due,Single,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,on 1st due,Single,prepayment with existing dues,3946
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,one day after 2nd due,Single,prepayment with existing dues,3947
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,one day before 3rd due,Single,prepayment with existing dues,3948
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,exact on 3rd due,Single,prepayment with existing dues,3949
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,complete payment on last due,Single,Single installment with prepayment amount,3950
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,complete payment after last due,Single,Single installment with prepayment amount,3951
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Multiple Prepayment on same due,single,prepayment with existing dues,3952
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Prepayment on MP1,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Prepayment between MP1 and MP2,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/360,EMI,Yes,Prepayment on MP2,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Prepayment on MP1,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Prepayment on Mp2,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/360,EMI,Yes,Prepayment on MP3,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,30/360,EMI,Yes,Prepay between Mp1 and MP2,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Prepay Between  MP2 and Mp3,MultiPeriod,prepayment with existing dues,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Before 1st due,Single,Single installment with prepayment amount,
+21,RGSCHDL,HORZNTL,DFRMCSTM,A/A,EMI,Yes,Before 1st due,Single,prepayment with existing and dues OD for previous and excuding unpaid   OD,

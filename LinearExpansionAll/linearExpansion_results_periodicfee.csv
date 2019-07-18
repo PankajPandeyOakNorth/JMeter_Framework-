@@ -1,0 +1,19 @@
+feeName,feeApplicationType,feeId,nextDueDate,feeCalculationMethod,feeFormula,feePercentage,feeAmount,referenceAmount,periodValue,periodFrequency,paymentDateMethod,paymentDate,capitalizeToPrincipal,accrualOrAmortization,accountstatus,FeeStaus,,,,,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,Active,Active,,3821,,odin3831auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,%,5,null,LoanAmount,1,MONTHS,IPD,null,TRUE,Accrual,Active,Active,,3822,,odin3832auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,3,MONTHS,IPD,null,TRUE,Accrual,Active,Active,,3823,,odin3833auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,3,MONTHS,SPD,2019-03-22,TRUE,Accrual,Active,Active,,3824,,odin3833auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,YEARS,IPD,null,TRUE,Accrual,Active,Active,,3825,,odin3834auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,FALSE,Accrual,Active,Active,,3826,,odin3835auris3,Change disbursementdate
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,FALSE,Accrual,Active,Active,,3827,,odin3835auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,FALSE,NONE,Active,Active,,3828,,none1783per1,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Amort,Active,Active,,3829,,odi1758per1,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,PedingApproval,Active,,3830,,odin3821auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,Approved,Active,,3831,,odin3837auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,Rejected,Active,,3832,,odin3838auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,Active,Disabled,,3833,,odin3839auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,active,Active,,3834,,odin3840auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,active,Active,,3835,,odin3841auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,active,Active,,3836,,odin3842auris3,
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,active,Active,,3837,,odin3842auris3,Undo
+Periodictest1FixInC,PERIODIC,ABC,null,FIXED,FLAT,null,1,null,1,MONTHS,IPD,null,TRUE,Accrual,active,Active,,3838,,odin3842auris3,Undo then disburseand the periodic

@@ -1,0 +1,6 @@
+identifier,type,name,showAccountsInChart,description,currency
+0_RepayAsset,ASSET,0_RepayAsset,TRUE,Testing,INR
+0_RepayLiability,LIABILITY,0_RepayLiability,TRUE,Testing,INR
+0_RepayExpe,EXPENSE,0_RepayExpe,TRUE,Testing,INR
+0_RepayRevenue,REVENUE,0_RepayRevenue,TRUE,Testing,INR
+0_RepayEquity,EQUITY,0_RepayEquity,TRUE,Testing,INR

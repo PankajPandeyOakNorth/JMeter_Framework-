@@ -1,0 +1,12 @@
+Test Execution Date,Execution Time,API Name,Test Scenario Number,JSON Payload,Results JSON File Name,Test Result, Reason For Failure
+04-01-2019,0651PM,ProductAccountMapping_GET,1,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_1.json,PASS,
+04-01-2019,0651PM,ProductAccountMapping_GET,2,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_2.json,PASS,
+04-01-2019,0651PM,ProductAccountMapping_GET,3,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_3.json,PASS,
+04-01-2019,0651PM,ProductAccountMapping_GET,4,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_4.json,PASS,
+04-01-2019,0651PM,ProductAccountMapping_GET,5,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_5.json,PASS,
+04-01-2019,0652PM,ProductAccountMapping_GET,6,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_6.json,PASS,
+04-01-2019,0652PM,ProductAccountMapping_GET,7,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_7.json,PASS,
+04-01-2019,0652PM,ProductAccountMapping_GET,8,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_8.json,PASS,
+04-01-2019,0652PM,ProductAccountMapping_GET,9,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_9.json,PASS,
+04-01-2019,0652PM,ProductAccountMapping_GET,10,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_10.json,PASS,
+04-01-2019,0652PM,ProductAccountMapping_GET,11,,C:\ACorn\jsonOutput\04-01-2019_0651PM\ProductAccountMapping_GETjsonOutput_11.json,PASS,

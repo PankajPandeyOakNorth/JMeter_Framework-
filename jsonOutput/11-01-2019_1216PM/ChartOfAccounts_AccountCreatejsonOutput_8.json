@@ -1,0 +1,1 @@
+{"timestamp":1547189290471,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Balance should not be greater than zero","path":"/accounting/v1/accounts"}

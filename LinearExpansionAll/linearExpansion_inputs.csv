@@ -1,0 +1,7 @@
+0,loanId,2143,2144,,,,,,,
+0,repaymentCurrency,Valid ,valid,,,,,,,
+0,collectionMethod,DBTCSTM,CSTMACC,,,,,,,
+0,remarks,rahul,rahul,,,,,,,
+1,repaymentDate,after,same day,,,,,,,
+2,customerRepayAmount,LessThanDue,Exact Due,Less than fee,ExactFeeAmount,GreaterThanFee and less than interest,ExactAmont Fee + Int,GreaterFee + Int,exact fee+int+principal,great than total due
+3,paymentAllocationMethod,HORZNTL,VERTICAL,,,,,,,

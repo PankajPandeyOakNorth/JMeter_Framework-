@@ -1,0 +1,7 @@
+0,LoanId,34,,,,,
+1,LastRepaymentReversed,Basic ,Basic ,Advance ,Advance ,Prepayment,Prepayment
+1,LastRepaymentReversed,currendate,valuedate,currentdate,value date,knockOffcurrentdate,SchduleRegenertionvaluedate
+2,FeeApplicationType,Periodic,Periodic,Adhoc,Adhoc,Event,
+2,CapitalixetoPrincipal,FALSE,TRUE,TRUE,FALSE,FALSE,
+3,Fees,with fees,W/O Fees,,,,
+4,LoansType,Emi,Epi,IntrestRollup,IPP,ino,

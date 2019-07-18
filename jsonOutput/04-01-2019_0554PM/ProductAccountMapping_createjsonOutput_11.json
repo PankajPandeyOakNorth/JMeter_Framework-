@@ -1,0 +1,1 @@
+{"timestamp":1546604756563,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Invalid Account mapped for Transaction Source Account, Account type should be ASSET","path":"/portfolio/v1/products"}

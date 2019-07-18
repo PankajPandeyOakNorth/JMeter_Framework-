@@ -1,0 +1,13 @@
+LoanId,Action,Date,Event,CapitalixetoPrincipal,due,calculatioMethod
+34,Periodic,IPD,Disb,TRUE,single,Emi
+34,Periodic,SPD,Disb,TRUE,single,Emi
+34,Adhoc,IPD,Disb,TRUE,single,Emi
+34,Adhoc,Valuedate,Disb,TRUE,single,Emi
+34,Periodic,IPD,Repayment,TRUE,single,Emi
+34,Periodic,IPD,Prepayment,TRUE,single,Emi
+34,Periodic,IPD,Rollup,TRUE,single,Emi
+34,Periodic,IPD,Disb,TRUE,multipledue,Emi
+34,Periodic,IPD,Disb,TRUE,single,IPP
+34,Periodic,IPD,Disb,TRUE,single,IntrestRollup
+34,Periodic,IPD,Disb,TRUE,single,INO
+34,Periodic,IPD,Disb,TRUE,single,EPI

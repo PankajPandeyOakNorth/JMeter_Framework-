@@ -1,0 +1,1 @@
+{"timestamp":1549023252034,"status":400,"error":"Bad Request","exception":"org.apache.fineract.cn.lang.ServiceException","message":"Product must exist 'RAHULKUM_100'.","path":"/portfolio/v1/loanaccount"}
